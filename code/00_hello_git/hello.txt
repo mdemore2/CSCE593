@@ -1,0 +1,123 @@
+Follow these steps to use git to add a source file into your repo. Afterwards you will modify
+some code and commit your changes.
+
+1) Everything between the asterics (*) is the C++ code you should place into a file called:
+      hello.cpp (case sensitive)
+
+2) Perform a git add to add your new source file into your repository.
+      git add hello.cpp
+      
+3) Everything between the octothorpes (#) is the Text data you should place into a file called:
+      MyFile.txt (case sensitive)
+
+4) Perform a git add to add your new text file into your repository.
+      git add MyFile.txt
+      
+5) Perform a git commit to commit your new files into your local repo (the .git folder). Change your commit message.      
+      git commit -am "o This is my commit message, I type a useful human readable description of what I am contributing with this commit..."
+
+6) Perform a git push to push your local repo with the repo at git.nykl.net.
+
+7) Modify hello.cpp to pad line numbers using 0 (zero).
+
+8) After updating the code, commit *and* push your changes.
+
+9) Log into https://git.nykl.net and validate that the hello.cpp residing on the server *is* the
+   latest version you just pushed.
+
+
+
+****************** Source code starts here (everything between asterics goes into hello.cpp ******************
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+/// HOW TO COMPILE ME:
+/// user@zz:/mnt/c/repos/courses/593/2019/prof593/code/00_hello_git$ g++ -std=c++17 hello.cpp
+
+
+/// This method creates a string of length N that is the value i, right justified and padded by
+/// the in passed pad_char character. For example, if N=3 and i == 2, the return is 002. If
+/// N=5 and i == 233, the return value is 00233.
+std::string pad( int i, int N, char pad_char = ' ' )
+{
+   std::string s = std::to_string(i);
+
+   if( s.length() > N )
+      return s;
+   
+   while( s.length() < N )
+      s = pad_char + s;
+
+   return s;
+}
+
+int main( int argc, char* argv[] )
+{
+   std::cout << "GIT is a great tool, it's also open source, and written by Linus Torvalds...\n"
+             << "This program will open a file passed as the first parameter and print its contents\n"
+             << "to stdout (the console)... It will insert line numbers at the beginning of each line...\n";
+
+   std::cout << "argc=" << argc << "\n";
+   std::vector< std::string > params( argv, argv + argc );
+   for( auto& s : params )
+      std::cout << "\"" << s <<"\"\n";
+
+   if( params.size() < 2 )
+   {
+      std::cout << "User did not specify a file to open. Exiting now...\n";
+      return -1;
+   }
+
+   std::ifstream fin( params[1] );
+   if( !fin )
+   {
+      std::cout << "WARNING: Failed to open file " << params[1] << "... Does it exist and is it in the same directory as this executable?\n";
+      return -1;
+   }
+
+   std::string line = "";
+   for( int i = 0; std::getline( fin, line, '\n' ); ++i )
+      std::cout << pad( i, 3, 'x' ) << ": " << line << "\n";      
+
+   return 0;
+}
+****************** Source code ends   here (everything between asterics goes into hello.cpp ******************
+
+
+################## Data file starts here (everything between octothorpes goes into MyFile.txt ################
+Hello world
+How are
+You doing today
+this is another line
+good
+abcdefghijklmnopqrstuvwxyz
+
+Yep...
+byeHello world
+How are
+You doing today
+this is another line
+good
+abcdefghijklmnopqrstuvwxyz
+
+Yep...
+byeHello world
+How are
+You doing today
+this is another line
+good
+Software is fun
+Coding is great
+Yep...
+byeHello world
+How are
+You doing today
+this is another line
+good
+C++ is always fun :)
+
+Yep...
+bye
+################## Data file ends   here (everything between octothorpes goes into MyFile.txt ################
