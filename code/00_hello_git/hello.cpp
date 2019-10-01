@@ -49,7 +49,7 @@ int main( int argc, char* argv[] )
 
    std::string line = "";
    for( int i = 0; std::getline( fin, line, '\n' ); ++i )
-      std::cout << pad( i, 3, 'x' ) << ": " << line << "\n";      
+      std::cout << pad( i, 3, '0' ) << ": " << line << "\n";      
 
    return 0;
 }
