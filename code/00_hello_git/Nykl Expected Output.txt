@@ -1,4 +1,3 @@
-user@DESKTOP-045ETRV:~/codeSolution/00_hello_git$ ./a.out MyFile.txt
 GIT is a great tool, it's also open source, and written by Linus Torvalds...
 This program will open a file passed as the first parameter and print its contents     
 to stdout (the console)... It will insert line numbers at the beginning of each line...
@@ -38,4 +37,3 @@ argc=2
 030:
 031: Yep...
 032: bye
-user@DESKTOP-045ETRV:~/codeSolution/00_hello_git$
