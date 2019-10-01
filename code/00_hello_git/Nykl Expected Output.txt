@@ -1,0 +1,41 @@
+user@DESKTOP-045ETRV:~/codeSolution/00_hello_git$ ./a.out MyFile.txt
+GIT is a great tool, it's also open source, and written by Linus Torvalds...
+This program will open a file passed as the first parameter and print its contents     
+to stdout (the console)... It will insert line numbers at the beginning of each line...
+argc=2
+"./a.out"
+"MyFile.txt"
+000: Hello world
+001: How are
+002: You doing today
+003: this is another line
+004: good
+005: abcdefghijklmnopqrstuvwxyz
+006:
+007: Yep...
+008: byeHello world
+009: How are
+010: You doing today
+011: this is another line
+012: good
+013: abcdefghijklmnopqrstuvwxyz
+014:
+015: Yep...
+016: byeHello world
+017: How are
+018: You doing today
+019: this is another line
+020: good
+021: Software is fun
+022: Coding is great
+023: Yep...
+024: byeHello world
+025: How are
+026: You doing today
+027: this is another line
+028: good
+029: C++ is always fun :)
+030:
+031: Yep...
+032: bye
+user@DESKTOP-045ETRV:~/codeSolution/00_hello_git$
