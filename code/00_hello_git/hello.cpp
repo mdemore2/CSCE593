@@ -10,7 +10,7 @@
 /// This method creates a string of length N that is the value i, right justified and padded by
 /// the in passed pad_char character. For example, if N=3 and i == 2, the return is 002. If
 /// N=5 and i == 233, the return value is 00233.
-std::string pad( int i, int N, char pad_char = ' ' )
+std::string pad( int i, int N, char pad_char = '0' )
 {
    std::string s = std::to_string(i);
 
