@@ -1,0 +1,9 @@
+Launch "x64 Native Tools Command Prompt for VS 2019" from the folder:
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2019\Visual Studio Tools\VC
+
+Then cd to where your .cpp file is located and type
+cl /EHsc yourFile.cpp
+
+For example:
+
+C:\repos\afit\Courses\CSCE 593 Software Engineering\code\01_palindromes_sln>cl /EHsc spellChecker.cpp
