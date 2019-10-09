@@ -22,21 +22,35 @@ int main( int argc, char* argv[] )
    std::cout << "Spell checker will use dictionary file: " << args[1] << "\n";
 
    //create a vector containing strings called words, this will store all the words in the dictionary.
+   
+   std::vector<std::string> words;
+
    //read the in passed dictionary file and place each word into one element of the vector
-   
-   
+  
+   std::ifstream inFile;
+   inFile.open(args[1]);
+   if (!inFile) {
+	   std::cerr << "Unable to open file " << args[1];
+	   exit(1);   // call system to stop
+   }
 
-
+   std::string line;
+   while (std::getline(inFile, line))
+   {
+	   words.push_back(line);
+   }
 
       
    //After reading in the file and populating the vector, print out the size
    //verify you've read the same number of words as there are lines in the dictionary file.
+
    std::cout << "Read in " << words.size() << " words...\n";
 
 
    //now create a vector of strings to store the palindromes that may exist in the vector of words.
    //name this vector palindromes
 
+   std::vector<std::string> palindromes;
 
    //create a lambda function that is a unary predicate operator that consumes a const std::string& s
    //and returns true iff s is a palindrome; false, otherwise.
