@@ -29,6 +29,9 @@ class SpellingResult
    SpellingResult( const std::string& lower, const std::string& upper, const std::string& origWord )
    {
       //Populate the private member variables in this constructor
+	   lowerBound_suggestion = lower;
+	   upperBound_suggestion = upper;
+	   orig = origWord;
    }
 
    std::string toString() const noexcept
@@ -45,6 +48,22 @@ class SpellingResult
          // Word: try *NOT* found. Suggestions: trye or tryer's
          // Word: to *NOT* found. Suggestions: toa or toadback
          // Word: amphicentric was found...
+
+	   std::string formatOut = "Word: ";
+
+	   if (lowerBound_suggestion != "") {
+		   formatOut += orig;
+		   formatOut += "*NOT* found. Suggestions: ";
+		   formatOut += lowerBound_suggestion;
+		   formatOut += " or ";
+		   formatOut += upperBound_suggestion;
+	   }
+	   else {
+		   formatOut += orig;
+		   formatOut += " was found...";
+	   }
+
+	   return formatOut;
    }
 
    std::string lowerBound_suggestion;
@@ -67,6 +86,36 @@ class Dictionary
          //Open are parse the file, creatings a std::vector<std::string> (just like last time)
          //the sort all the words and move them into a Dictionary instance.
          //return the dictionary.
+
+		  std::vector<std::string> wordSet;
+		  std::ifstream inFile;
+		  std::string line;
+
+		  inFile.open(filePathToWords);
+
+		  if (!inFile) {
+			  std::cerr << "Unable to open file " << filePathToWords;
+			  exit(1);   // call system to stop
+		  }
+
+		  while (std::getline(inFile, line))
+		  {
+			  line = trimWhiteSpace(line);
+			  wordSet.push_back(line);
+		  }
+		  std::sort(wordSet.begin(), wordSet.end());
+
+		
+		  Dictionary(wordSet);
+		  if (Dictionary)
+		  {
+			  return Dictionary;
+		  }
+		  else
+		  {
+			  return {};
+		  }
+
       }
 
       //Move constructor employs move semantics to efficiently emplace the in passed
@@ -75,6 +124,7 @@ class Dictionary
       Dictionary( std::vector<std::string>&& wordSet )
       {
          //use move semantics to move wordSet into this->words
+		  this->words = wordSet;
       }
 
       //Destructor, called when the dictionary is destroyed / leaves scope.
@@ -119,6 +169,7 @@ class Dictionary
          //use a std::stringstream to build an output that looks like:
          //"This dictionary contains 273642 words...\n". Obviously make the number
          //specific to your dictionary.
+		  std::cout << "This dictionary contains " << this->words.size() << "words...\n";
       }
 
    private:
