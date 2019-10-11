@@ -21,13 +21,13 @@ Triangle::Triangle(float baseInCm, float heightInCm) : Shape()
    this->c.r = 0.75f; //triangles are only 75% red... for some reason
 }
 
-float Triangle::getAreaCmSq()
+float Triangle::getAreaCmSq() const
 {
    float area = (this->baseCm * this->heightCm) / 2.0f;
    return area;
 }
 
-std::string Triangle::draw()
+std::string Triangle::draw() const
 {
    this->requestDoIt();
    return std::string{"Drawing a Triangle... My Red Value is " + std::to_string(this->c.r) + "\n"};
@@ -41,13 +41,13 @@ Rectangle::Rectangle(float lengthInCm, float heightInCm)
    this->heightCm = heightInCm;
 }
 
-float Rectangle::getAreaCmSq()
+float Rectangle::getAreaCmSq() const
 {
    float area = this->lengthCm * this->heightCm;
    return area;
 }
 
-std::string Rectangle::draw()
+std::string Rectangle::draw() const
 {
    return std::string{"Drawing a Rectangle... My Red Value is " + std::to_string(this->c.r) + "\n"};
 }
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
    auto tt = new Triangle{30.0f, 40.0f};
    auto rr = new Rectangle(11.0f, 4.0f);
 
-   std::vector<Shape*> shapesRaw;
+   std::vector<Shape *> shapesRaw;
    shapesRaw.push_back(t);
    shapesRaw.push_back(r);
    shapesRaw.push_back(tt);
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
    {
       std::cout << "Area: " << s->getAreaCmSq() << ", Type is " << s->draw()
                 << ", ";
-      //s->requestDoIt();
+      s->requestDoIt();
       std::cout << "\n";
    }
 
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
    shapesSmart.push_back(std::move(recB));
 
    for (auto &s : shapesSmart)
-      std::cout << "Area: " << s->getAreaCmSq() << ", Type is " << s->draw() << "\n";
+      std::cout << "Area: " << s->getAreaCmSq() << ",  My Type is " << s->draw() << "\n";
 
    return 0;
 }
