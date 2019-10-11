@@ -119,38 +119,52 @@ void GLViewHW1::onMouseMove( const SDL_MouseMotionEvent& e )
 }
 
 
-void GLViewHW1::onKeyDown( const SDL_KeyboardEvent& key )
+void GLViewHW1::onKeyDown(const SDL_KeyboardEvent& key)
 {
-   GLView::onKeyDown( key );
-   if( key.keysym.sym == SDLK_0 )
-      this->setNumPhysicsStepsPerRender( 1 );
+	GLView::onKeyDown(key);
+	if (key.keysym.sym == SDLK_0)
+		this->setNumPhysicsStepsPerRender(1);
 
 
 
-      //Up arrow
-      //TODO move forwards (along look direction)
+	//Up arrow
+	//TODO move forwards (along look direction)
+	if (key.keysym.sym == SDLK_UP)
+		ship->moveRelative(ship->getLookDirection());
+
+	/*{
+		Vector current = ship->getPosition();
+		Vector alt = ship->getLookDirection();
+		Vector newPos = current + alt;
+		ship->setPosition(newPos);
+	}*/
+
+	//Down arrow
+	//TODO move backwards (opposite of forwards)
+	if (key.keysym.sym == SDLK_DOWN)
+		ship->moveRelative(Vector{ 0,0,0 } - ship->getLookDirection());
 
 
+	//Left arrow
+	//TODO rotate about an axis... X is forward, Y is Left, Z is up. Use the right hand rule
+	//Don't forget to convert degrees to radians, if needed.
+	if (key.keysym.sym == SDLK_LEFT)
+		ship->rotateAboutRelZ(1);
 
-      //Down arrow
-      //TODO move backwards (opposite of forwards)
-
-
-
-      //Left arrow
-      //TODO rotate about an axis... X is forward, Y is Left, Z is up. Use the right hand rule
-      //Don't forget to convert degrees to radians, if needed.
-
-
-
-      //Right arrow
-      //TODO rotate about an axis, but opposite of left... X is forward, Y is Left, Z is up. Use the right hand rule
-      //Don't forget to convert degrees to radians, if needed.
+	//Right arrow
+	//TODO rotate about an axis, but opposite of left... X is forward, Y is Left, Z is up. Use the right hand rule
+	//Don't forget to convert degrees to radians, if needed.
+	if (key.keysym.sym == SDLK_RIGHT)
+		ship->rotateAboutRelZ(-1);
 
 
+	//t key
+	//Set position and orientation
+	if (key.keysym.sym == SDLK_t)
+	{
+		ship->setPosition(Vector{ 0,0,10 });
 
-      //t key
-      //Set position and orientation
+	}
 }
 
 
