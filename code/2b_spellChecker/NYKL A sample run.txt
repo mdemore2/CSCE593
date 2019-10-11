@@ -1,0 +1,22 @@
+C:\repos\afit\Courses\CSCE 593 Software Engineering\code\2b_spellChecker_sln>spellChecker_NyklSLN.exe ../01_palindromes/randomDict.txt
+Spell checker will use dictionary file: ../01_palindromes/randomDict.txt
+This dictionary contains 219492 words...
+Please input a string to spellcheck:
+fibrilation pseudotrimerous testing filee to try to amphicentric
+Word: fibrilation was found...
+Word: pseudotrimerous was found...
+Word: testing *NOT* found. Suggestions: testingly or testitis
+Word: filee *NOT* found. Suggestions: filelike or filemaker
+Word: to *NOT* found. Suggestions: toa or toadback
+Word: try *NOT* found. Suggestions: trye or tryer's
+Word: to *NOT* found. Suggestions: toa or toadback
+Word: amphicentric was found...
+
+C:\repos\afit\Courses\CSCE 593 Software Engineering\code\2b_spellChecker_sln>spellChecker_NyklSLN.exe
+Spell Checker Program
+Usage: ./spellChecker dictionary.txt textDocument.txt
+This program will build a dictionary from the dictionary.txt file
+In the future, this program will then spellcheck a textDocument.txt
+and report all misspelled words.
+
+C:\repos\afit\Courses\CSCE 593 Software Engineering\code\2b_spellChecker_sln>
