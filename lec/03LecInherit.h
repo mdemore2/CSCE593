@@ -15,10 +15,10 @@ class Shape
  public:
    Shape() = default;
    virtual ~Shape() = default;
-   //virtual void requestDoIt() { this->doIt(); }
+   virtual void requestDoIt() const { this->doIt(); }
 
-   virtual float getAreaCmSq() = 0;
-   virtual std::string draw() = 0;
+   virtual float getAreaCmSq() const = 0;
+   virtual std::string draw() const = 0;
 
  protected:
    //float r = 1.0f, g = 1.0f, b = 1.0f;
@@ -28,37 +28,37 @@ class Shape
 
  private:
    int myVal = 3;
-   //void doIt() { std::cout << "Shape did it\n"; }
+   void doIt() const { std::cout << "Shape did it\n"; }
 };
 
-class Triangle : public Shape
+class Triangle : public Shape //this is inheritance, Triangle inherits from Shape
 {
  public:
    Triangle(float baseInCm, float heightInCm);
    virtual ~Triangle() = default;
 
-   virtual void requestDoIt() { this->doIt(); } //Use virtual dispatch to call  Shape::doIt().
+   virtual void requestDoIt() const { this->doIt(); } //Use virtual dispatch to call  Shape::doIt().
 
-   virtual float getAreaCmSq() override;
-   virtual std::string draw() override;
+   virtual float getAreaCmSq() const override;
+   virtual std::string draw() const override;
 
  private:
    float baseCm = 0;
    float heightCm = 0;
-   void doIt() { std::cout << "Triangle did it\n"; }
+   void doIt() const { std::cout << "Triangle did it\n"; }
 };
 
-class Rectangle : public Shape
+class Rectangle : public Shape //Rectangle also inherits from Shape
 {
  public:
    Rectangle(float lengthInCm, float heighInCm);
    virtual ~Rectangle() = default;
 
-   virtual float getAreaCmSq() override;
-   virtual std::string draw() override;
+   virtual float getAreaCmSq() const override;
+   virtual std::string draw() const override;
 
  private:
    float lengthCm = 0;
    float heightCm = 0;
-   void doIt() { std::cout << "Rectangle did it\n"; }
+   void doIt() const { std::cout << "Rectangle did it\n"; }
 };
