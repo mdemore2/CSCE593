@@ -149,13 +149,13 @@ void GLViewHW1::onKeyDown(const SDL_KeyboardEvent& key)
 	//TODO rotate about an axis... X is forward, Y is Left, Z is up. Use the right hand rule
 	//Don't forget to convert degrees to radians, if needed.
 	if (key.keysym.sym == SDLK_LEFT)
-		ship->rotateAboutRelZ(1);
+		ship->rotateAboutRelZ(0.262);
 
 	//Right arrow
 	//TODO rotate about an axis, but opposite of left... X is forward, Y is Left, Z is up. Use the right hand rule
 	//Don't forget to convert degrees to radians, if needed.
 	if (key.keysym.sym == SDLK_RIGHT)
-		ship->rotateAboutRelZ(-1);
+		ship->rotateAboutRelZ(-0.262);
 
 
 	//t key
@@ -163,6 +163,10 @@ void GLViewHW1::onKeyDown(const SDL_KeyboardEvent& key)
 	if (key.keysym.sym == SDLK_t)
 	{
 		ship->setPosition(Vector{ 0,0,10 });
+		while (ship->getLookDirection() != Vector{ 1,0,0 })
+		{
+			ship->rotateAboutRelZ(0.262);
+		}
 
 	}
 }
