@@ -1,0 +1,107 @@
+mark.demore
+
+
+----------------COMPILATION OUTPUT----------------
+--------------------------------------------------
+
+
+----------------DIFF PROGRAM OUTOUT---------------
+Spell checker will use dictionary file: randomDict.txt							Spell checker will use dictionary file: randomDict.txt
+Read in 219492 words...											Read in 219492 words...
+The palindromes, in sorted order, are:									The palindromes, in sorted order, are:
+aaa													aaa
+acca													acca
+adda													adda
+addda													addda
+affa													affa
+ajaja													ajaja
+alala													alala
+amma													amma
+apa													apa
+ara													ara
+arara													arara
+atta													atta
+bab													bab
+bb													bb
+cbc													cbc
+cfc													cfc
+crc													crc
+cyc													cyc
+ded													ded
+deedeed													deedeed
+degged													degged
+dered													dered
+divid													divid
+dmd													dmd
+dtd													dtd
+elle													elle
+ese													ese
+gog													gog
+hagigah													hagigah
+igigi													igigi
+ihi													ihi
+ii													ii
+iii													iii
+imi													imi
+immi													immi
+kakkak													kakkak
+kazak													kazak
+kelek													kelek
+kinnikinnik												kinnikinnik
+kkk													kkk
+ldl													ldl
+maam													maam
+malam													malam
+malayalam												malayalam
+mesem													mesem
+mmmm													mmmm
+murdrum													murdrum
+mym													mym
+nauruan													nauruan
+neven													neven
+ofo													ofo
+oooo													oooo
+oto													oto
+ottetto													ottetto
+pcp													pcp
+peeweep													peeweep
+prp													prp
+ptp													ptp
+renner													renner
+retter													retter
+rever													rever
+rotavator												rotavator
+s's													s's
+sds													sds
+seles													seles
+sesses													sesses
+sooloos													sooloos
+sps													sps
+tallat													tallat
+tdt													tdt
+tebbet													tebbet
+tebet													tebet
+teet													teet
+tevet													tevet
+tgt													tgt
+tibbit													tibbit
+tipit													tipit
+tnt													tnt
+trt													trt
+tst													tst
+tt													tt
+txt													txt
+tyt													tyt
+ululu													ululu
+umu													umu
+wnw													wnw
+wsw													wsw
+www													www
+xanax													xanax
+xix													xix
+xx													xx
+xxx													xxx
+yaray													yaray
+yoy													yoy
+--------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++
