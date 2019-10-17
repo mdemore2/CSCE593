@@ -106,10 +106,10 @@ class Dictionary
 		  std::sort(wordSet.begin(), wordSet.end());
 
 		
-		  Dictionary(wordSet);
-		  if (Dictionary)
+		  std::optional<Dictionary> dict =  Dictionary(std::move(wordSet));
+		  if (dict)
 		  {
-			  return Dictionary;
+			  return dict;
 		  }
 		  else
 		  {
@@ -125,6 +125,7 @@ class Dictionary
       {
          //use move semantics to move wordSet into this->words
 		  this->words = wordSet;
+		  wordSet.clear();
       }
 
       //Destructor, called when the dictionary is destroyed / leaves scope.
