@@ -53,7 +53,7 @@ class SpellingResult
 
 	   if (lowerBound_suggestion != "") {
 		   formatOut += orig;
-		   formatOut += "*NOT* found. Suggestions: ";
+		   formatOut += " *NOT* found. Suggestions: ";
 		   formatOut += lowerBound_suggestion;
 		   formatOut += " or ";
 		   formatOut += upperBound_suggestion;
@@ -63,6 +63,7 @@ class SpellingResult
 		   formatOut += " was found...";
 	   }
 
+	   formatOut += "\n";
 	   return formatOut;
    }
 
@@ -143,7 +144,19 @@ class Dictionary
          //the original word, and if not found, it will return a the word
          //lexicographically below and above where that word ought to reside.
 
-         return SpellingResult{ "", "", w };
+		  //std::vector<std::string>::iterator low, up;
+		  //auto low, up;
+		  auto low = std::lower_bound(this->words.begin(), this->words.end(), w);
+		  auto up = low++;
+
+		  if (*up != w)
+		  {
+			  return SpellingResult{ *low, *up, w };
+		  }
+		  else
+		  {
+			  return SpellingResult{ "","", w };
+		  }
       }
 
       std::vector<SpellingResult> spellCheckLine( const std::string& input ) const noexcept
@@ -162,7 +175,14 @@ class Dictionary
          //now iterate using for( ; it != end; it++ )... create a vector of Spelling Result
          // and invoke exists_OrderLogN. Push the spelling result of each word into the vector.
          //For testing and debugging, print out the value of the iterator at each loop iteration.
-         
+		 SpellingResult spellRes;
+		 std::vector<SpellingResult> spellRes_List;
+		 for (; it != end; it++)
+		 {
+			 spellRes = this->exists_OrderLogN(*it);
+			 spellRes_List.push_back(spellRes);
+		 }
+		 return spellRes_List;
       }
 
       std::string toString() const noexcept
@@ -170,7 +190,8 @@ class Dictionary
          //use a std::stringstream to build an output that looks like:
          //"This dictionary contains 273642 words...\n". Obviously make the number
          //specific to your dictionary.
-		  std::cout << "This dictionary contains " << this->words.size() << "words...\n";
+		  std::cout << "This dictionary contains " << this->words.size() << " words...\n";
+		  return "";
       }
 
    private:
