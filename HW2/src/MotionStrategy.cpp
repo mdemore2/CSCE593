@@ -13,7 +13,14 @@ namespace Aftr
 //a float.
 std::tuple<Vector,bool> MotionParabolic::computePosition( double dt_sec, double range_m, double totalTime_sec, double headingDeg )
 {
-   return std::make_tuple( Vector{0,0,0}, false );
+	float x = 0, y = 0, z = 0;
+
+
+
+	if (dt_sec != totalTime_sec)
+		return std::make_tuple(Vector{ x,y,z }, false);
+	else
+		return std::make_tuple(Vector{ x,y,z }, true);
 }
 
 
