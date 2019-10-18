@@ -1,0 +1,17 @@
+Spell checker will use dictionary file: ../01_palindromes/randomDict.txt
+This dictionary contains 219492 words...
+Please input a string to spellcheck:
+Word: fibrilation was found...
+Word: pseudotrimerous was found...
+Word: testing *NOT* found. Suggestions: testitis or testingly
+Word: filee *NOT* found. Suggestions: filemaker or filelike
+Word: to *NOT* found. Suggestions: toadback or toa
+Word: try *NOT* found. Suggestions: tryer's or trye
+Word: to *NOT* found. Suggestions: toadback or toa
+Word: amphicentric was found...
+Word: a *NOT* found. Suggestions: aaa or a's
+Word: aa *NOT* found. Suggestions: aaerially or aaa
+Word: 123 *NOT* found. Suggestions: aaa or a's
+Word: zz *NOT* found. Suggestions: ébrillade's or éboulement's
+Word: zygophyte's was found...
+Word: z *NOT* found. Suggestions: zB or z's
