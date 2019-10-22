@@ -18,11 +18,11 @@ std::tuple<Vector,bool> MotionParabolic::computePosition( double dt_sec, double 
 	double vh = 0, vv = 0;	//vel vars to calc
 
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
-	vv = aftr::gravity * totalTime_sec;	//initial vertical velocity
+	vv = GRAVITY * totalTime_sec;	//initial vertical velocity
 
 	sx = vh * dt_sec * cos(headingDeg);
 	sy = vh * dt_sec * sin(headingDeg);
-	sz = (vv * dt_sec) + ((aftr::gravity / 2) * pow(dt_sec, 2));
+	sz = (vv * dt_sec) + ((GRAVITY / 2) * pow(dt_sec, 2));
 
 	x = static_cast<float>(sx);
 	y = static_cast<float>(sy);
@@ -42,7 +42,7 @@ double MotionParabolic::getLaunchAngle( double range_m, double totalTime_sec )
 	double theta = 0;
 
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
-	vv = aftr::gravity * totalTime_sec;	//initial vertical velocity
+	vv = GRAVITY * totalTime_sec;	//initial vertical velocity
 
 	theta = tan(vv/vh);
 
@@ -59,19 +59,24 @@ std::string MotionParabolic::toString( double range_m, double totalTime_sec, dou
    //Landing Position is( 59.669, 0.000, 0.000 )
 
    //do some math here...
-	double vh = 0, vv = 0, maxh = 0, xf = 0, yf = 0, zf = 0;
+	double vh = 0, vv = 0, maxh = 0, xf = 0, yf = 0;
 
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
-	vv = aftr::gravity * totalTime_sec;	//initial vertical velocity
+	vv = GRAVITY * totalTime_sec;	//initial vertical velocity
+
+	maxh = pow(vv, 2) / (2 * static_cast<double>(GRAVITY));
+
+	xf = range_m * cos(headingDeg);
+	yf = range_m * sin(headingDeg);
 
    //The output below can eventually be commented in and used, once those variables are declared and populated.
 
    //use a std::stringstream object to print out the following information
    std::stringstream ss;
-   //ss << "V_horz (m/s) is  " << V_horz << "\n";
-   //ss << "V_vert (m/s) is  " << V_vert << "\n";
-   //ss << "Max Alt (m)  is " << maxAltM << "\n";
-   //ss << "Landing Position is " << Vector{ static_cast<float>( xComp ), static_cast<float>( yComp ), 0 }.toString() << "\n";
+   ss << "V_horz (m/s) is  " << vh << "\n";
+   ss << "V_vert (m/s) is  " << vv << "\n";
+   ss << "Max Alt (m)  is " << maxh << "\n";
+   ss << "Landing Position is " << Vector{ static_cast<float>( xf ), static_cast<float>( yf ), 0 }.toString() << "\n";
 
    return ss.str();
 }
