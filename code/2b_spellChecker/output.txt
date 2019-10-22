@@ -1,0 +1,27 @@
+mark.demore
+
+
+----------------COMPILATION OUTPUT----------------
+--------------------------------------------------
+
+
+----------------DIFF PROGRAM OUTOUT---------------
+Spell checker will use dictionary file: ../01_palindromes/randomDict.txt				Spell checker will use dictionary file: ../01_palindromes/randomDict.txt
+This dictionary contains 219492 words...								This dictionary contains 219492 words...
+Please input a string to spellcheck:									Please input a string to spellcheck:
+Word: fibrilation was found...										Word: fibrilation was found...
+Word: pseudotrimerous was found...									Word: pseudotrimerous was found...
+Word: testing *NOT* found. Suggestions: testingly or testitis					   |	Word: testing *NOT* found. Suggestions: testitis or testingly
+Word: filee *NOT* found. Suggestions: filelike or filemaker					   |	Word: filee *NOT* found. Suggestions: filemaker or filelike
+Word: to *NOT* found. Suggestions: toa or toadback						   |	Word: to *NOT* found. Suggestions: toadback or toa
+Word: try *NOT* found. Suggestions: trye or tryer's						   |	Word: try *NOT* found. Suggestions: tryer's or trye
+Word: to *NOT* found. Suggestions: toa or toadback						   |	Word: to *NOT* found. Suggestions: toadback or toa
+Word: amphicentric was found...										Word: amphicentric was found...
+Word: a *NOT* found. Suggestions: a's or aaa							   |	Word: a *NOT* found. Suggestions: aaa or a's
+Word: aa *NOT* found. Suggestions: aaa or aaerially						   |	Word: aa *NOT* found. Suggestions: aaerially or aaa
+Word: 123 *NOT* found. Suggestions: a's or aaa							   |	Word: 123 *NOT* found. Suggestions: aaa or a's
+Word: zz *NOT* found. Suggestions: éboulement's or ébrillade's					   |	Word: zz *NOT* found. Suggestions: ébrillade's or éboulement's
+Word: zygophyte's was found...										Word: zygophyte's was found...
+Word: z *NOT* found. Suggestions: z's or zB							   |	Word: z *NOT* found. Suggestions: zB or z's
+--------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++
