@@ -13,11 +13,22 @@ namespace Aftr
 //a float.
 std::tuple<Vector,bool> MotionParabolic::computePosition( double dt_sec, double range_m, double totalTime_sec, double headingDeg )
 {
-	float x = 0, y = 0, z = 0;
+	float x = 0, y = 0, z = 0;	//pos vars to pass
+	double sx = 0, sy = 0, sz = 0;	//pos vars to calc
+	double vh = 0, vv = 0;	//vel vars to calc
 
+	vh = range_m / totalTime_sec;	//initial horizontal velocity
+	vv = aftr::gravity * totalTime_sec;	//initial vertical velocity
 
+	sx = vh * dt_sec * cos(headingDeg);
+	sy = vh * dt_sec * sin(headingDeg);
+	sz = (vv * dt_sec) + ((aftr::gravity / 2) * pow(dt_sec, 2));
 
-	if (dt_sec != totalTime_sec)
+	x = static_cast<float>(sx);
+	y = static_cast<float>(sy);
+	z = static_cast<float>(sz);
+
+	if (dt_sec < totalTime_sec)
 		return std::make_tuple(Vector{ x,y,z }, false);
 	else
 		return std::make_tuple(Vector{ x,y,z }, true);
@@ -27,7 +38,15 @@ std::tuple<Vector,bool> MotionParabolic::computePosition( double dt_sec, double 
 //You've already computed everything you need to find this value in the method above. You can just recompute it here.
 double MotionParabolic::getLaunchAngle( double range_m, double totalTime_sec )
 {
-   return 0;
+	double vh = 0, vv = 0;
+	double theta = 0;
+
+	vh = range_m / totalTime_sec;	//initial horizontal velocity
+	vv = aftr::gravity * totalTime_sec;	//initial vertical velocity
+
+	theta = tan(vv/vh);
+
+   return theta;
 }
 
 std::string MotionParabolic::toString( double range_m, double totalTime_sec, double headingDeg ) const
@@ -40,7 +59,10 @@ std::string MotionParabolic::toString( double range_m, double totalTime_sec, dou
    //Landing Position is( 59.669, 0.000, 0.000 )
 
    //do some math here...
+	double vh = 0, vv = 0, maxh = 0, xf = 0, yf = 0, zf = 0;
 
+	vh = range_m / totalTime_sec;	//initial horizontal velocity
+	vv = aftr::gravity * totalTime_sec;	//initial vertical velocity
 
    //The output below can eventually be commented in and used, once those variables are declared and populated.
 
