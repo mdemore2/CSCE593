@@ -307,10 +307,10 @@ void Aftr::GLViewDefenseDaemon::loadMap()
    {
       //You need to uncomment this code to instantiate a missle interceptor... However, you need to complete implementing this
       //so its factory constructor method doesn't crash...
-      //this->interceptor = WOInterceptorMissile::New();
-      //this->interceptor->setPosition( Vector{ 0,0,0 } );
-      //std::cout << "Missile size is " << this->interceptor->getModel()->getBoundingBox().getlxlylz().toString() << "\n";
-      //this->worldLst->push_back( this->interceptor );
+      this->interceptor = WOInterceptorMissile::New();
+      this->interceptor->setPosition( Vector{ 0,0,0 } );
+      std::cout << "Missile size is " << this->interceptor->getModel()->getBoundingBox().getlxlylz().toString() << "\n";
+      this->worldLst->push_back( this->interceptor );
    }
 
    float towerZ = 0;
