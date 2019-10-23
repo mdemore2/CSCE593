@@ -18,11 +18,11 @@ std::tuple<Vector,bool> MotionParabolic::computePosition( double dt_sec, double 
 	double vh = 0, vv = 0;	//vel vars to calc
 
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
-	vv = GRAVITY * totalTime_sec;	//initial vertical velocity
+	vv = (GRAVITY * totalTime_sec)/2;	//initial vertical velocity --half time going up
 
 	sx = vh * dt_sec * cos(headingDeg);
 	sy = vh * dt_sec * sin(headingDeg);
-	sz = (vv * dt_sec) + ((GRAVITY / 2) * pow(dt_sec, 2));
+	sz = (vv * dt_sec) - ((GRAVITY / 2) * pow(dt_sec, 2));	//changed to minus
 
 	x = static_cast<float>(sx);
 	y = static_cast<float>(sy);
