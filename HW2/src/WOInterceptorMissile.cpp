@@ -54,7 +54,7 @@ void WOInterceptorMissile::setMotionStrategy( std::unique_ptr< MotionStrategyIFa
 double WOInterceptorMissile::getMotionStrategyLaunchAngleDeg()
 {
    //use the strategy object to compute and return the launch angle.
-   return this->motionAlgorithm->getLaunchAngle;
+   return this->motionAlgorithm->getLaunchAngle(range_m,totalTime_sec);
 }
 
 std::string WOInterceptorMissile::getTrajectoryInfo()
@@ -64,7 +64,7 @@ std::string WOInterceptorMissile::getTrajectoryInfo()
 
 	std::string output;
    output += "Printing Trajectory info...";
-   output += this->motionAlgorithm->toString;
+   output += this->motionAlgorithm->toString(range_m,totalTime_sec,headingDeg);
    //V_horz( m / s ) is  22.5166
    //V_vert( m / s ) is  12.9983
    //Max Alt( m )  is 8.61134
@@ -97,7 +97,7 @@ void WOInterceptorMissile::updateMissileTrajectory()
    //Use the strategy pattern to compute the current position of our missile. The strategy will return both a position and a bool. If the bool is false,
    //the missile has not yet reached it target; otherwise, it will be true. Also, pay attention to the return value of the strategy -- read up about 
    //std::tuples and use the std::tie method to accept multiple return values from your strategy (yeah, you can do that w/ tuples and modern C++).
-   std::tie(newPosition, reachedTarget) = this->motionAlgorithm->computePosition;
+   std::tie(newPosition, reachedTarget) = this->motionAlgorithm->computePosition(deltaTSec,range_m,totalTime_sec,headingDeg);
    
 
    //At this point, you have the new position and boolean information from your strategy. Do NOT modify the remainder of this method.
