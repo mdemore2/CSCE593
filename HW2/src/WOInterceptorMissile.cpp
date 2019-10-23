@@ -45,12 +45,16 @@ void WOInterceptorMissile::setMotionStrategy( std::unique_ptr< MotionStrategyIFa
    //populate all related member variables.
    //When a unique_ptr is passed in, you will have to use the move semantics to perform an assignment. This explicitly transfers
    //ownership and enforces an unambiguous owner of the memory pointed to by the unique_ptr.
+	this->motionAlgorithm = std::move(strategy);
+	this->range_m = range_m;
+	this->totalTime_sec = totalTime_sec;
+	this->headingDeg = headingDeg;
 }
 
 double WOInterceptorMissile::getMotionStrategyLaunchAngleDeg()
 {
    //use the strategy object to compute and return the launch angle.
-   return 0;
+   return this->motionAlgorithm->getLaunchAngle;
 }
 
 std::string WOInterceptorMissile::getTrajectoryInfo()
@@ -58,13 +62,15 @@ std::string WOInterceptorMissile::getTrajectoryInfo()
    //use the strategy object to compute and return the launch angle.
    //A sample output using the default params in the conf file will look like this:
 
-   //Printing Trajectory info...
+	std::string output;
+   output += "Printing Trajectory info...";
+   output += this->motionAlgorithm->toString;
    //V_horz( m / s ) is  22.5166
    //V_vert( m / s ) is  12.9983
    //Max Alt( m )  is 8.61134
    //Landing Position is( 59.669, 0.000, 0.000 )
 
-   return "Implement me... Do it now...\n";
+   return output;
 }
 
 void WOInterceptorMissile::onUpdateWO()
@@ -91,7 +97,7 @@ void WOInterceptorMissile::updateMissileTrajectory()
    //Use the strategy pattern to compute the current position of our missile. The strategy will return both a position and a bool. If the bool is false,
    //the missile has not yet reached it target; otherwise, it will be true. Also, pay attention to the return value of the strategy -- read up about 
    //std::tuples and use the std::tie method to accept multiple return values from your strategy (yeah, you can do that w/ tuples and modern C++).
-
+   std::tie(newPosition, reachedTarget) = this->motionAlgorithm->computePosition;
    
 
    //At this point, you have the new position and boolean information from your strategy. Do NOT modify the remainder of this method.
@@ -106,11 +112,18 @@ void WOInterceptorMissile::launch()
    //If the missile is already launched, it can't be launched again unless it is reset.
    //Also, if a launch occurs, in order to keep track of how much time has elapsed, we must 
    //set this->launchTime to the current system time using a chrono system clock.
+	if (this->state == WOInterceptorMissile::MISSILE_STATE::AIMING)
+	{
+		this->state = WOInterceptorMissile::MISSILE_STATE::FLYING;
+		this->launchTime = std::chrono::system_clock::now();
+	}
 }
 
 void WOInterceptorMissile::reset()
 {
-   //This resets the missile. Set its position to the origin and ensure it's missile state is reset.   
+   //This resets the missile. Set its position to the origin and ensure it's missile state is reset. 
+	this->setPosition({ 0,0,0 });
+	this->state = WOInterceptorMissile::MISSILE_STATE::AIMING;
 }
 
 } //namespace Aftr
