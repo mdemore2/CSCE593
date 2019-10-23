@@ -17,11 +17,12 @@ std::tuple<Vector,bool> MotionParabolic::computePosition( double dt_sec, double 
 	double sx = 0, sy = 0, sz = 0;	//pos vars to calc
 	double vh = 0, vv = 0;	//vel vars to calc
 
+	if (totalTime_sec <= 0) { totalTime_sec = 1; };
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
 	vv = (GRAVITY * totalTime_sec)/2;	//initial vertical velocity --half time going up
 
-	sx = vh * dt_sec * cos(headingDeg);
-	sy = vh * dt_sec * sin(headingDeg);
+	sx = vh * dt_sec * cos(headingDeg*PI/180);
+	sy = vh * dt_sec * sin(headingDeg*PI/180);
 	sz = (vv * dt_sec) - ((GRAVITY / 2) * pow(dt_sec, 2));	//changed to minus
 
 	x = static_cast<float>(sx);
@@ -66,8 +67,8 @@ std::string MotionParabolic::toString( double range_m, double totalTime_sec, dou
 
 	maxh = pow(vv, 2) / (2 * static_cast<double>(GRAVITY));
 
-	xf = range_m * cos(headingDeg);
-	yf = range_m * sin(headingDeg);
+	xf = range_m * cos(headingDeg*PI/180);
+	yf = range_m * sin(headingDeg*PI/180);
 
    //The output below can eventually be commented in and used, once those variables are declared and populated.
 
