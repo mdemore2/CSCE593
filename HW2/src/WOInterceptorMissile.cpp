@@ -63,7 +63,7 @@ std::string WOInterceptorMissile::getTrajectoryInfo()
    //A sample output using the default params in the conf file will look like this:
 
 	std::string output;
-   output += "Printing Trajectory info...";
+   output += "Printing Trajectory info...\n";
    output += this->motionAlgorithm->toString(range_m,totalTime_sec,headingDeg);
    //V_horz( m / s ) is  22.5166
    //V_vert( m / s ) is  12.9983
