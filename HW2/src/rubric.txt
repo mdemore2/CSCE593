@@ -1,0 +1,8 @@
+# Your grade is 46 / 50
+A: 15 / 15 | Behavior along non-axis heading
+B: 20 / 20 | Code within MotionParabolic.h/.cpp
+C: 11 / 15 | WOInterceptorMissile.h/.cpp
+---------- COMMENTS ----------
+o missing checks for null before deref pointer -2 
+o overall, good job.
+o use wo->onCreate( ManagerEnvironmentConfiguration::getSMM() + "/models/DefenseDaemon/Launcher/Missile.3ds", Vector{ 1,1,1 }, MESH_SHADING_TYPE::mstAUTO );

@@ -18,6 +18,7 @@ WOInterceptorMissile* WOInterceptorMissile::New()
    //2. invoke onCreate method passing in the shared multimedia path (SMM) "/models/DefenseDaemon/Launcher/Missile.3ds", a scale of 1,1,1, and the default shading type (auto).
    //   This approach gives polymorphic behavior to a "constructor". It let's all WO's polymorphically compose the type of their specific Model.
 
+   //missile->onCreate( ManagerEnvironmentConfiguration::getSMM() + "/models/DefenseDaemon/Launcher/Missile.3ds", Vector{ 1,1,1 }, MESH_SHADING_TYPE::mstAUTO );     
 	missile->onCreate("../../../shared/mm//models/DefenseDaemon/Launcher/Missile.3ds", { 1,1,1 }, Aftr::MESH_SHADING_TYPE::mstAUTO);
    
 	//3. return the WOInterceptorMissile*
