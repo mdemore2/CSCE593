@@ -43,7 +43,7 @@ double MotionParabolic::getLaunchAngle( double range_m, double totalTime_sec )
 	double theta = 0;
 
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
-	vv = GRAVITY * totalTime_sec;	//initial vertical velocity
+	vv = (GRAVITY * totalTime_sec)/2;	//initial vertical velocity
 
 	theta = tan(vv/vh);
 
@@ -63,7 +63,7 @@ std::string MotionParabolic::toString( double range_m, double totalTime_sec, dou
 	double vh = 0, vv = 0, maxh = 0, xf = 0, yf = 0;
 
 	vh = range_m / totalTime_sec;	//initial horizontal velocity
-	vv = GRAVITY * totalTime_sec;	//initial vertical velocity
+	vv = (GRAVITY * totalTime_sec)/2;	//initial vertical velocity
 
 	maxh = pow(vv, 2) / (2 * static_cast<double>(GRAVITY));
 
