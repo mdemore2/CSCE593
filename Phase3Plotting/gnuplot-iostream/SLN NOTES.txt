@@ -1,0 +1,9 @@
+I modified near line 1581 to accept a relative path and
+then convert it to a canonical absolute path to gnuplot exe:
+
+boost::filesystem::path canonicalPath = boost::filesystem::canonical( boost::filesystem::path(in) ); //SLN enables relative path to bin as input
+//FILE *fh = GNUPLOT_POPEN(cmd.c_str(), "w"); //commented out by SLN 1 Nov 2017
+FILE *fh = GNUPLOT_POPEN(canonicalPath.string().c_str(), "w");
+if(!fh) throw(std::ios_base::failure("cannot open pipe "+cmd));
+return FileHandleWrapper(fh, true);
+}
