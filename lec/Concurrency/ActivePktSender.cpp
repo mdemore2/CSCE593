@@ -129,7 +129,7 @@ void sendPackets( std::vector< std::string >& data )
                                                        } );
 
    for(auto& s : data )
-      encryptor.process( &s );
+      decorator.process( &s );
 
 }
 
@@ -153,7 +153,7 @@ void decorate( std::string* s )
 
 std::vector<std::string> getData()
 {
-   size_t size = 1000;
+   size_t size = 100;
    std::vector<std::string> v( size );
    
    for(int i = 0; i < size; i++)   
