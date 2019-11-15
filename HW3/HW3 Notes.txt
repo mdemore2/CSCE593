@@ -1,0 +1,194 @@
+Due 6 December 2019 at 0930am EST.
+
+High Level Description:
+
+You have been tasked to build a piece of software that interfaces with a top secret 4-bit quantum super pulse annhilator (QSPA). The QSPA is actually ancient Martian technology acquired by the Space Force while patrolling Phobos. This technology has been reverse engineered by Masters students at AFIT. Your job is to create a an extensible, well-designed cross platform GUI that applies a bitmask against the stream of nibbles (4-bit words) eminatting from the QSPA. When paired with the decrypted Martian Codec, the bitmask collapses the QSPA's discretized wave function enabling quantum tunnelling at a macro scale (ie, teleportation). Scientists from the Union Aerospace Corporation have noted that there is a constant unaccounted for delay in this quantum tunneling, but nonetheless, it works, so let's keep pressing forward.
+
+Your program accepts a 4-bit input mask from a user and applies this mask against a set of 16 nibbles sequentially consumed, one at a time, from the QSPA. Your program will show two windows, one will be an input window and one will be an output window. The input window displays the latest bits from the QPSA and the output window displays the result of applying the user entered bitmask to the input nibble. Pressing ENTER will retrieve the next nibble from the QPSA which will trigger the input and output windows to update themselves.
+
+
+In this assignment, you will use the following patterns when implementing your solution:
+Abstract Factory
+Factory (Virtual Constructor)
+Singleton
+Observer
+Inheritance
+Adapter - One must adapt the input/output from one subsystem to a usable form for another subsystem (hardware pins to gui button state)
+Composite/Aggregate - A Window contains zero or more Widgets such as Buttons
+
+0. For each place I already have inserted code, that code must be used. In addition to that code, you will have to add your own classes and methods.
+
+1. Place your source code in a namespace called HW3.
+
+2. Use one of the above patterns to encapsulate input pins (FourPinExternalInput class). At the beginning of each iteration in the main.cpp loop, the class's receiveNewPinState() is invoked. This causes the pins to update to their new values. Item 4 below elaborates on what subsequently occurs once the pins have changed state. At the top of the header file, document your selected design pattern and justify why you chose to use it in this situation.
+
+3. Use one of the above patterns to support multiple platforms. Specifically, #define osWINDOWS and #define osLINUX platforms. Correspondingly, use inheritance to support specialized Windows and Buttons for each supported platform. Your rendering of #define osWINDOWS and #define osLINUX ***MUST*** precisely match my output identically. This includes characters and spacing. An automated DIFF will be used for grading - if there is not an identical match, points will be lost. At the top of the header file corresponding to this approach, document your selected design pattern and justify why you chose to use it in this situation.
+
+4. Use one of the above patterns to support notifying a button when its corresponding input pin changes. While implementing this, we want to minimize coupling. A button does not need to know about the state of a hardware pin (why should a general GUI widget need to know about a specific type of hardware interface?). To this end, use a lambda to "translate" a change in pin state to the corresponding change in an associated button's internal values. That is, the lambda must capture (literally C++ lambda capture via a closure) a handle to both the button as well as the pin. The lambda can then be responsible for manipulating the button state when the pin's state is manipulated. In this way, the lambda is the "glue code" that knows about both the pin and the GUI button and how to make the subscribed button reflect the pin's state. By doing so, the button doesn't know about hardware pins and the hardware pins don't know about GUI buttons. Where you implement this technique, document your selected design pattern and justify why you chose to use it in this situation. Each button should subscribe to be notified of a pin change; that is, one button subscribes once. Four buttons would require 4 subscriptions.
+
+5. Use one of the above patterns to notify an output button when the state of an input button changes. Use a similar lambda technique to that described in the paragraph above. When an input button's value changes (because it was notified of a pin change by the external pins), the input button should notify all subscribed objects via lambda invocation. Where you implement this technique, document your selected design pattern and justify why you chose to use it in this situation.
+
+6. Use shared_ptr for storing all buttons and windows. To use a std::shared_ptr< T >, you must #include <memory> at the top of the file using the shared pointer. std::shared_pointers<T> can be stored in std::vectors<>. shared_pointers utilize move semantics. Read up on them: http://en.cppreference.com/w/cpp/utility/move (another move reference: https://stackoverflow.com/questions/3106110/what-are-move-semantics)
+
+7. Concrete instances of Buttons and Windows shall have their own Factory with the following construction interface:
+static std::shared_ptr< MyConcreteButtonOrWindow > New();
+The New method shall construct a shared pointer, invoke a virtual onCreate() method defined in the abstract base class of the Button or Window, and return the shared pointer. The purpose of invoking the virtual onCreate() method is to offer polymorphic behavior within the concrete instance's constructor. For this application, the onCreate() method need only print out "ClassName::onCreate()...\n". This let's me know that the class's polymorphic constructor infrastrucutre is implemented, even if the machinery hasn't been used yet.
+   For the Abstract base class as well as the concrete instances, the following must be true:
+   7.1 The Copy constructor, and move constructor must be deleted so the *only* public interface to creation of a concrete Button or Window is through the ::New Factory()...
+   7.2 The Default constructor must be protected.
+
+8. Use the override qualifier for all virtual methods that override an ancestor's declaration or implementation. Read up here http://en.cppreference.com/w/cpp/language/override
+
+9. Use the const qualifier for all methods that do not modify the instance's state. Read up here https://www.cprogramming.com/tutorial/const_correctness.html (or for more details: https://isocpp.org/wiki/faq/const-correctness).
+
+10. When drawing Buttons and Windows... Since we are using console-based output, our "drawing tool" is std::cout <<... This makes it hard to independently draw a complete button or set of buttons within a text-rendered window. To work around this, the abstract Button class should define the following 4 methods:
+   virtual int drawTopEdge( std::ostream& os ) const override;
+   virtual int drawState( std::ostream& os ) const override;
+   virtual int drawValue( std::ostream& os ) const override;
+   virtual int drawBottomEdge( std::ostream& os ) const override;
+   The returned int denotes the number of characters written to std::cout. Each button must automatically draw itself to the proper size and each window must also do the same.
+   
+   Useful helper methods for the associated Buttons should also include:
+   void setName( const std::string& id );
+   void setValue( const std::string& value );
+   void setState( const BUTTON_STATE& state );
+   virtual int getWidth() const = 0;
+   virtual int getHeight() const = 0;
+   std::string getStateStr() const;
+   BUTTON_STATE getState() const;
+   
+   The BUTTON_STATE is an enum class declared in HW3 namespace in Button.h's header file: enum class BUTTON_STATE { ON, OFF };
+
+11. To compile on Linux or the Linux Subsystem for windows, you may type:
+g++ -std=c++17 main.cpp Button.cpp FourPinExternInput.cpp LinButton.cpp LinGUIFactory.cpp LinWindow.cpp WinButton.cpp WinGUIFactory.cpp WinWindow.cpp
+On Windows, you can create your own Empty C++ solution to compile the code.
+
+12. Submit a high-level UML class diagram showing your solution called HW3.mdj. This must include each class that you implemented / used (aside from the c++ stl), the associations between the classes, and public member methods.
+
+
+
+When main.cpp contains
+#define osLINUX
+A sample window looks like:
+
+LinGUIFactory::LinGUIFactory()...
+LinWindow::onCreate()...
+LinButton::onCreate()...
+LinButton::onCreate()...
+LinButton::onCreate()...
+LinButton::onCreate()...
+LinWindow::onCreate()...
+LinButton::onCreate()...
+LinButton::onCreate()...
+LinButton::onCreate()...
+LinButton::onCreate()...
+Enter a 4-bit mask as a set of space
+ separated 1 or 0 values
+ High bit to low bit, ex:  "1 1 1 1"
+ This mask will be applied
+ to all 4 hardware input pins: 1 1 0 1
+Ready to mask digital inputs. Iterating
+ through all pin inputs now...
+<=Lindow: Inputs=====================>
+[                                    ]
+[<=In  3=><=In  2=><=In  1=><=In  0=>]
+[[     ON][     ON][     ON][     ON]]
+[[      0][      0][      0][      0]]
+[<=======><=======><=======><=======>]
+<====================================>
+<=Lindow: Outputs====================>
+[                                    ]
+[<=Out 3=><=Out 2=><=Out 1=><=Out 0=>]
+[[     ON][     ON][    OFF][     ON]]
+[[      0][      0][      0][      0]]
+[<=======><=======><=======><=======>]
+<====================================>
+...
+         88
+         88
+         88
+ ,adPPYb,88  ,adPPYba,   ,adPPYba,  88,dPYba,,adPYba,
+a8"    `Y88 a8"     "8a a8"     "8a 88P'   "88"    "8a
+8b       88 8b       d8 8b       d8 88      88      88
+"8a,   ,d88 "8a,   ,a8" "8a,   ,a8" 88      88      88
+ `"8bbdP"Y8  `"YbbdP"'   `"YbbdP"'  88      88      88
+
+
+When main.cpp contains
+#define osWINDOWS
+A sample window looks like:
+
+WinGUIFactory::WinGUIFactory()...
+WinWindow::onCreate()...
+WinButton::onCreate()...
+WinButton::onCreate()...
+WinButton::onCreate()...
+WinButton::onCreate()...
+WinWindow::onCreate()...
+WinButton::onCreate()...
+WinButton::onCreate()...
+WinButton::onCreate()...
+WinButton::onCreate()...
+Enter a 4-bit mask as a set of space
+ separated 1 or 0 values
+ High bit to low bit, ex:  "1 1 1 1"
+ This mask will be applied
+ to all 4 hardware input pins: 1 1 0 1
+Ready to mask digital inputs. Iterating
+ through all pin inputs now...
++---WinWindow: Inputs----------------+
+|                                    |
+|+-In  3-++-In  2-++-In  1-++-In  0-+|
+||ON     ||ON     ||ON     ||ON     ||
+||0      ||0      ||0      ||0      ||
+|+-------++-------++-------++-------+|
++------------------------------------+
++---WinWindow: Outputs---------------+
+|                                    |
+|+-Out 3-++-Out 2-++-Out 1-++-Out 0-+|
+||ON     ||ON     ||OFF    ||ON     ||
+||0      ||0      ||0      ||0      ||
+|+-------++-------++-------++-------+|
++------------------------------------+
+...
+         88
+         88
+         88
+ ,adPPYb,88  ,adPPYba,   ,adPPYba,  88,dPYba,,adPYba,
+a8"    `Y88 a8"     "8a a8"     "8a 88P'   "88"    "8a
+8b       88 8b       d8 8b       d8 88      88      88
+"8a,   ,d88 "8a,   ,a8" "8a,   ,a8" 88      88      88
+ `"8bbdP"Y8  `"YbbdP"'   `"YbbdP"'  88      88      88
+
+
+If I choose to launch the program via the following command:
+/m/c/r/a/C/C/HW3 Solution >>> HW3.exe test
+
+This will run a test suite which creates the following output
+
+WinGUIFactory::WinGUIFactory()...
+WinWindow::onCreate()...
+WinButton::onCreate()...
++---WinWindow: This is a big, long name+
+|                                      |
+|+-My Big Button name------------+     |
+||OFF                            |     |
+||This is my value as a button...|     |
+|+-------------------------------+     |
++--------------------------------------+
+WinButton::onCreate()...
+WinButton::onCreate()...
++---WinWindow: This is a big, long name------------------------------+
+|                                                                    |
+|+-My Big Button name------------++-Small-++-My other button's name-+|
+||OFF                            ||ON     ||ON                      ||
+||This is my value as a button...||Short  ||Here is another value   ||
+|+-------------------------------++-------++------------------------+|
++--------------------------------------------------------------------+
++---WinWindow: This is a very long title, it should be longer than the buttons...+
+|                                                                                |
+|+-My Big Button name------------++-Small-++-My other button's name-+            |
+||OFF                            ||ON     ||ON                      |            |
+||This is my value as a button...||Short  ||Here is another value   |            |
+|+-------------------------------++-------++------------------------+            |
++--------------------------------------------------------------------------------+
