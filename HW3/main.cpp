@@ -2,7 +2,7 @@
 #include <string>
 
 //#define osWINDOWS
-#define osLINUX
+//#define osLINUX
 
 #include "AbstractGUIFactory.h"
 #include "WinGUIFactory.h"
