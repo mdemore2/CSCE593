@@ -60,16 +60,28 @@ The New method shall construct a shared pointer, invoke a virtual onCreate() met
    The BUTTON_STATE is an enum class declared in HW3 namespace in Button.h's header file: enum class BUTTON_STATE { ON, OFF };
 
 11. To compile on Linux or the Linux Subsystem for windows, you may type:
-g++ -std=c++17 main.cpp Button.cpp FourPinExternInput.cpp LinButton.cpp LinGUIFactory.cpp LinWindow.cpp WinButton.cpp WinGUIFactory.cpp WinWindow.cpp
-On Windows, you can create your own Empty C++ solution to compile the code.
+g++ -std=c++17 -DosLINUX main.cpp Button.cpp FourPinExternInput.cpp LinButton.cpp LinGUIFactory.cpp LinWindow.cpp WinButton.cpp WinGUIFactory.cpp WinWindow.cpp
+or
+g++ -std=c++17 -DosWINDOWS main.cpp Button.cpp FourPinExternInput.cpp LinButton.cpp LinGUIFactory.cpp LinWindow.cpp WinButton.cpp WinGUIFactory.cpp WinWindow.cpp
+The above command will only use one thread to compile everything -- this is slow, a better alternative is:
+
+OR Compile using CMAKE:
+To Build targeting osWINDOWS, use:
+cmake -DTargOS=osWINDOWS
+make all -j8
+
+To Build targeting osLINUX, use:
+cmake -DTargOS=osLINUX
+make all -j8
+
+
+On Windows, you can run the .bat file to create an MSVC C++ solution to compile the code.
 
 12. Submit a high-level UML class diagram showing your solution called HW3.mdj. This must include each class that you implemented / used (aside from the c++ stl), the associations between the classes, and public member methods.
 
 
 
-When main.cpp contains
-#define osLINUX
-A sample window looks like:
+When compiled with -DosLINUX, a sample window looks like:
 
 LinGUIFactory::LinGUIFactory()...
 LinWindow::onCreate()...
@@ -114,9 +126,8 @@ a8"    `Y88 a8"     "8a a8"     "8a 88P'   "88"    "8a
  `"8bbdP"Y8  `"YbbdP"'   `"YbbdP"'  88      88      88
 
 
-When main.cpp contains
-#define osWINDOWS
-A sample window looks like:
+
+When compiled with -DosWINDOWS, a sample window looks like:
 
 WinGUIFactory::WinGUIFactory()...
 WinWindow::onCreate()...
