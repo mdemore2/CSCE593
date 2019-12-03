@@ -16,7 +16,8 @@ public:
    //Do NOT modify this method
    static void receiveNewPinState();
 
-   //static void listenForPinChange(function(arryofPin_val));
+   static void listenForPinChange(std::function<void(const std::array<PIN_VAL,4>)> observer);
+
 
    // implement a method called listenForPinChange( ... ));
    //It should take as a parameter a function that consumes an array of PIN_VAL. When a change to the pins occurs,
@@ -28,5 +29,6 @@ private:
    //implement me
    //this should store all necessary member data for the pins.
 	static std::array<PIN_VAL, 4> PINS;
+	static std::vector<std::function<void(const std::array<PIN_VAL, 4>)>> SUBSCRIBERS;
 };
 }

@@ -5,7 +5,7 @@
 
 namespace HW3
 {
-	enum class BUTTON_STATE { on, off };
+	enum class BUTTON_STATE { ON, OFF };
 
 	class Button
 	{
@@ -26,5 +26,13 @@ namespace HW3
 
 		virtual void listenForValueChange(std::function<void(const std::string& value)> observer);
 
+	private:
+		static std::string name, value;
+		static BUTTON_STATE state;
+		static int width, height;
+		static std::vector<std::function<void(const std::string& value)>> SUBSCRIBERS;
+
+
 	};
+
 }

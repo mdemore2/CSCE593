@@ -10,11 +10,11 @@ namespace HW3
 //any static storage declared in the header file ought to be stored in this translation unit.
 
 
-void FourPinExternInput::listenForPinChange( ... )
+void listenForPinChange(std::function<void(const std::array<PIN_VAL, 4>)> observer)
 {
-   //implement me
+	FourPinExternInput::SUBSCRIBERS.push_back(observer);
 	//It should take as a parameter a function that consumes an array of PIN_VAL. When a change to the pins occurs,
-   //each function passed to this method should be called back and be passed the latest pin state.
+	//each function passed to this method should be called back and be passed the latest pin state.
 }
 
 void FourPinExternInput::receiveNewPinState()
@@ -51,10 +51,16 @@ void FourPinExternInput::receiveNewPinState()
    //idx represents the index of the new value read from the FourPinExternalInput::pins. Let's set the FourPinExternalInput::pins to the value at data[idx]
    FourPinExternInput::PINS = data[idx];
 
-   //using std::underlying_type_t<PINS>(pin)
+   //using std::underlying_type_t<PINS>(pin)?
 
    //TODO: All our pins have changed, time to notify any subscribers who want to observe this
    //event... Write that code here
+
+   for (int i = 0; i < FourPinExternInput::SUBSCRIBERS.length(); i++)
+   {
+	   FourPinExternInput::SUBSCRIBERS[i]();
+	   //run lambda
+   }
 
 }
 

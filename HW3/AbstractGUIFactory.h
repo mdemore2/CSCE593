@@ -4,3 +4,8 @@
 
 #define osWINDOWS
 #define osLINUX
+
+namespace HW3
+{
+
+}
