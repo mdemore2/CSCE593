@@ -1,0 +1,48 @@
+
+___ 0  (5  pts) Used my existing code unmodified.
+       
+       
+___ 1  (5  pts) Placed code in HW3 namespace
+       
+       
+___ 2  (15 pts) Singleton FourPinExternalInput / callback lambda
+           
+           
+___ 3  (10 pts) Abstract GUI factory / cross platform Buttons & Windows
+           
+           
+___ 4  (10 pts) Notify input button / Lambda callback / minimal coupling
+       
+       
+___ 5  (8  pts) Notify output button / Lambda callback / minimal coupling
+       
+       
+___ 6  (8  pts) Usage of shared pointer throughout HW3
+       
+       
+___ 7  (10 pts) Factory Pattern for concrete Window & Button
+       ___ 7.1 (3 pts) Deleted copy and move constructors
+       ___ 7.2 (3 pts) Default constructor protected
+       
+___ 8  (4 pts)  Override Qualifier on all virtual methods that override.
+       
+       
+___ 9  (5 pts) const qualified methods for const member methods
+       
+       
+___ 10 (15 pts) Button interface. Return value counts characters written.
+
+
+___ 11 (10 pts) UML Diagram
+
+
+___ 12 (10 pts) Normal output for Windows & Linux
+
+
+___ 13 (10 pts) Normal output for Testing of Windows
+
+
+
+
+_____ / 125 pts
+TOTAL
