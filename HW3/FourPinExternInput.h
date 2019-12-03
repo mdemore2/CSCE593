@@ -1,5 +1,5 @@
 #pragma once
-
+//PINS implemented with Singleton pattern, ensures single instance of pins
 
 namespace HW3
 {
@@ -16,6 +16,8 @@ public:
    //Do NOT modify this method
    static void receiveNewPinState();
 
+   //static void listenForPinChange(function(arryofPin_val));
+
    // implement a method called listenForPinChange( ... ));
    //It should take as a parameter a function that consumes an array of PIN_VAL. When a change to the pins occurs,
    //each function passed to this method should be called back and be passed the latest pin state.
@@ -25,5 +27,6 @@ public:
 private:
    //implement me
    //this should store all necessary member data for the pins.
+	static std::array<PIN_VAL, 4> PINS;
 };
 }
