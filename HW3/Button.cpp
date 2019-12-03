@@ -5,29 +5,29 @@
 
 namespace HW3
 {
-	void setName(const std::string& id)
+	void Button::setName(const std::string& id) 
 	{
-		Button::name = id;
+		this->name = id;
 	}
-	void setValue(const std::string& value)
+	void Button::setValue(const std::string& value)
 	{
-		Button::value = value;
+		this->value = value;
 	}
-	void setState(const HW3::BUTTON_STATE& state)
+	void Button::setState(const HW3::BUTTON_STATE& state)
 	{
-		Button::state = state;
+		this->state = state;
 	}
-	int getWidth()
+	int Button::getWidth() const
 	{
-		return Button::width;
+		return this->width;
 	}
-	int getHeight()
+	int Button::getHeight() const
 	{
-		return Button::height;
+		return this->height;
 	}
-	std::string getStateStr()
+	std::string Button::getStateStr() const
 	{
-		if (Button::state == BUTTON_STATE::ON)
+		if (this->state == BUTTON_STATE::ON)
 		{
 			return "ON";
 		}
@@ -36,26 +36,27 @@ namespace HW3
 			return "OFF";
 		}
 	}
-	BUTTON_STATE getState()
+	BUTTON_STATE Button::getState() const
 	{
-		return Button::state;
+		return this->state;
 	}
 
-	int drawTopEdge(std::ostream& os)
+	int Button::drawTopEdge(std::ostream& os) const
+	{
+		os << "yeet";
+	}
+	int Button::drawState(std::ostream& os) const
 	{
 	}
-	int drawState(std::ostream& os)
+	int Button::drawValue(std::ostream& os) const
 	{
 	}
-	int drawValue(std::ostream& os)
-	{
-	}
-	int drawBottomEdge(std::ostream& os)
+	int Button::drawBottomEdge(std::ostream& os) const
 	{
 	}
 
-	void listenForValueChange(std::function<void(const std::string & value)> observer)
+	void Button::listenForValueChange(std::function<void(const std::string & value)> observer)
 	{
-		Button::SUBSCRIBERS.push_back(observer);
+		this->SUBSCRIBERS.push_back(observer);
 	}
 }

@@ -26,11 +26,11 @@ namespace HW3
 
 		virtual void listenForValueChange(std::function<void(const std::string& value)> observer);
 
-	private:
-		static std::string name, value;
-		static BUTTON_STATE state;
-		static int width, height;
-		static std::vector<std::function<void(const std::string& value)>> SUBSCRIBERS;
+	protected:
+		 std::string name, value;
+		 BUTTON_STATE state;
+		 int width, height;
+		 std::vector<std::function<void(const std::string& value)>> SUBSCRIBERS;
 
 
 	};

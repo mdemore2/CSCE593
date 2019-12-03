@@ -10,7 +10,7 @@ namespace HW3
 //any static storage declared in the header file ought to be stored in this translation unit.
 
 
-void listenForPinChange(std::function<void(const std::array<PIN_VAL, 4>)> observer)
+void FourPinExternInput::listenForPinChange(std::function<void(const std::array<PIN_VAL, 4>)> observer)
 {
 	FourPinExternInput::SUBSCRIBERS.push_back(observer);
 	//It should take as a parameter a function that consumes an array of PIN_VAL. When a change to the pins occurs,
@@ -56,9 +56,9 @@ void FourPinExternInput::receiveNewPinState()
    //TODO: All our pins have changed, time to notify any subscribers who want to observe this
    //event... Write that code here
 
-   for (int i = 0; i < FourPinExternInput::SUBSCRIBERS.length(); i++)
+   for (int i = 0; i < FourPinExternInput::SUBSCRIBERS.size(); i++)
    {
-	   FourPinExternInput::SUBSCRIBERS[i]();
+	   FourPinExternInput::SUBSCRIBERS.front();
 	   //run lambda
    }
 
