@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-//#define osWINDOWS
-//#define osLINUX
+#define osWINDOWS
+#define osLINUX
 
 #include "AbstractGUIFactory.h"
 #include "WinGUIFactory.h"
