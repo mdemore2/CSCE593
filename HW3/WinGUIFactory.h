@@ -7,8 +7,10 @@ namespace HW3
 {
 	class WinGUIFactory : public GUIFactory {
 	public:
+		static std::shared_ptr<WinGUIFactory> New();
+
 		Button* createButton() {
-			return new WinButton;
+			return WinButton::New();
 		}
 		Window* createWindow() {
 			return new WinWindow;

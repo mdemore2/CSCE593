@@ -7,6 +7,8 @@ namespace HW3
 {
 	class LinGUIFactory : public GUIFactory {
 	public:
+		static std::shared_ptr<LinGUIFactory> New();
+
 		Button* createButton() {
 			return new LinButton;
 		}
