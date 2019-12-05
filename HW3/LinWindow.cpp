@@ -13,7 +13,7 @@ namespace HW3
 	{
 		this->buttons.push_back(button);
 	}
-	int LinWindow::draw(std::ostream& os)
+	int LinWindow::draw(std::ostream& os) const
 	{
 
 	}

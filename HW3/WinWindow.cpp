@@ -1,7 +1,7 @@
 #include "Window.h"
 #include "WinWindow.h"
 #include "Button.h"
-#include"WinButton.h"
+#include "WinButton.h"
 
 namespace HW3
 {
@@ -16,7 +16,7 @@ namespace HW3
 	{
 		this->buttons.push_back(button);
 	}
-	int WinWindow::draw(std::ostream& os)
+	int WinWindow::draw(std::ostream& os) const
 	{
 
 	}
