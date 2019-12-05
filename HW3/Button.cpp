@@ -2,6 +2,7 @@
 #include <iostream>
 #include <array>
 #include <functional>
+#include <string>
 
 namespace HW3
 {
@@ -19,11 +20,23 @@ namespace HW3
 	}
 	int Button::getWidth() const
 	{
-		return this->width;
+		int width = 0;
+		if (this->name.length() > this->value.length())
+		{
+			width = this->name.length();
+			width += 4;
+		}
+		else
+		{
+			width = this->value.length();
+			width += 2;
+		}
+
+		return width;
 	}
 	int Button::getHeight() const
 	{
-		return this->height;
+		return 4;
 	}
 	std::string Button::getStateStr() const
 	{

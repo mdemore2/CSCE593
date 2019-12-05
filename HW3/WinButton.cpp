@@ -1,5 +1,7 @@
 #include "Button.h"
 #include "WinButton.h"
+#include <iostream>
+#include <string>
 
 namespace HW3
 {
@@ -9,27 +11,68 @@ namespace HW3
 		return newButton;
 	}
 
-	
 
-	int Button::getWidth() const
+	int WinButton::drawTopEdge(std::ostream& os) const
 	{
-		return this->width;
+		int width = this->getWidth();
+		if (width > this->name.length() + 4)
+		{
+			width -= 4;
+			width -= this->name.length();
+		}
+		else
+		{
+			width = 0;
+		}
+		os << "+-" << this->name;
+		while (width < 0)
+		{
+			os << "-";
+			width--;
+		}
+		os << "-+";
+		return getWidth();
 	}
-	int Button::getHeight() const
+	int WinButton::drawState(std::ostream& os) const
 	{
-		return this->height;
-	}
+		int width = getWidth();
+		width -= getStateStr().length() + 2;
+		os << "|";
+		while (width > 0)
+		{
+			os << " ";
+			width--;
+		}
 
-	int Button::drawTopEdge(std::ostream& os) const
-	{
+		os << getStateStr() << "|";
+		return getWidth();
 	}
-	int Button::drawState(std::ostream& os) const
+	int WinButton::drawValue(std::ostream& os) const
 	{
+		int width = getWidth();
+		width -= this->value.length() + 2;
+		os << "|";
+		while (width > 0)
+		{
+			os << " ";
+			width--;
+		}
+
+		os << getStateStr() << "|";
+		return getWidth();
+
+		return getWidth();
 	}
-	int Button::drawValue(std::ostream& os) const
+	int WinButton::drawBottomEdge(std::ostream& os) const
 	{
-	}
-	int Button::drawBottomEdge(std::ostream& os) const
-	{
+		int width = getWidth() - 2;
+		os << "+";
+		while (width > 0)
+		{
+			os << "-";
+			width--;
+		}
+		os << "+";
+		return getWidth();
 	}
 }
