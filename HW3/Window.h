@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include "Button.h"
 
 
 namespace HW3
@@ -14,7 +15,7 @@ namespace HW3
 		//virtual int getWidth() const = 0;
 		//virtual int getHeight() const = 0;
 
-		virtual int addButton(HW3::Button button) const = 0;
+		virtual int addButton(std::shared_ptr<Button> button) const = 0;
 		virtual int draw(std::ostream& os) const = 0;
 		
 
@@ -29,6 +30,7 @@ namespace HW3
 		std::string name;
 		//int width, height;
 		std::shared_ptr<Window> window;
+		std::vector<std::shared_ptr<Button>> buttons;
 	};
 
 }
