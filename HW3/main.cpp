@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-#define osWINDOWS (WinGUIFactory(), WinWindow(), WinButton())
-#define osLINUX (LinGUIFactory(),LinWindow(),LinButton())
+#define osWINDOWS
+#define osLINUX
 
 #include "AbstractGUIFactory.h"
 #include "WinGUIFactory.h"

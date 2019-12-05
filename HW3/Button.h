@@ -31,6 +31,7 @@ namespace HW3
 		 BUTTON_STATE state;
 		 int width, height;
 		 std::vector<std::function<void(const std::string& value)>> SUBSCRIBERS;
+		 std::shared_ptr<Button> button;
 
 
 	};

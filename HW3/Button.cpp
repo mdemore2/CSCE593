@@ -43,7 +43,6 @@ namespace HW3
 
 	int Button::drawTopEdge(std::ostream& os) const
 	{
-		os << "yeet";
 	}
 	int Button::drawState(std::ostream& os) const
 	{
