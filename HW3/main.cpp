@@ -58,11 +58,28 @@ void testMainProgram()
 		outbutts.push_back(bo);
 	}
 
-	auto inbuttlamb = [=](auto const& pins) { for (int i = 0; i < 3; i++) { inbutts(i)->setValue(pins(i)); } };
-	auto outbuttlamb = [=](auto const& pins) { for (int i = 0; i < 3; i++) { if (outbutts(i)->getState() == BUTTON_STATE::ON) { outbutts(i)->setVal(pins(i)); } };
+	FourPinExternInput::listenForPinChange([=](const auto& pins) {
+		for (int i = 0; i < 3; i++)
+		{
+			if (pins[i] == PIN_VAL::HIGH)
+			{
+				inbutts.at(i)->setValue("l");
+			}
+			
+		}
+		});
+	auto outbuttlamb = [=](auto & pins) { 
+		for (int i = 0; i < 3; i++)
+		{
+			if (outbutts.at(i)->getState() == BUTTON_STATE::ON) {
+				outbutts.at(i)->setValue(pins[i]);
+			}
+		}
+	};
 
-	FourPinExternInput::listenForPinChange(inbuttlamb);
+	//FourPinExternInput::listenForPinChange(inbuttlamb);
 	FourPinExternInput::listenForPinChange(outbuttlamb);
+
    //create the two windows - input and output. The top window is the "input" window. The bottom is the "output" window.
    //One button exists in each window for each external hardware pin we are monitoring. Create these buttons and associate
    //them with the corresponding hardware pins they are monitoring, respectively.

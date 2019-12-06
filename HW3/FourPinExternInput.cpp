@@ -10,9 +10,9 @@ namespace HW3
 //any static storage declared in the header file ought to be stored in this translation unit.
 
 
-void FourPinExternInput::listenForPinChange(std::function<void(const std::array<PIN_VAL, 4>)> observer)
+void FourPinExternInput::listenForPinChange(const subscriberCallback& observer)
 {
-	FourPinExternInput::SUBSCRIBERS.push_back(observer);
+	instance().subscribers.push_back(observer);
 	//It should take as a parameter a function that consumes an array of PIN_VAL. When a change to the pins occurs,
 	//each function passed to this method should be called back and be passed the latest pin state.
 }
@@ -49,19 +49,32 @@ void FourPinExternInput::receiveNewPinState()
    idx = ( idx + 1 ) % data.size();
 
    //idx represents the index of the new value read from the FourPinExternalInput::pins. Let's set the FourPinExternalInput::pins to the value at data[idx]
-   FourPinExternInput::PINS = data[idx];
+   auto& f = FourPinExternInput::instance();
+   //   auto& m = Singleton::instance().map;
+   
+   instance().pins = data[idx];
 
    //using std::underlying_type_t<PINS>(pin)?
 
    //TODO: All our pins have changed, time to notify any subscribers who want to observe this
    //event... Write that code here
 
-   for (int i = 0; i < FourPinExternInput::SUBSCRIBERS.size(); i++)
+   for (int i = 0; i < instance().subscribers.size(); i++)
    {
-	   FourPinExternInput::SUBSCRIBERS.at(i);
+	   auto lamb = instance().subscribers.at(i);
+	   lamb(PINS);
 	   //run lambda
    }
 
+}
+
+FourPinExternInput* FourPinExternInput::f = nullptr;
+FourPinExternInput::FourPinExternInput() {}
+FourPinExternInput& FourPinExternInput::instance()
+{
+	if (FourPinExternInput::f == nullptr)
+		FourPinExternInput::f = new FourPinExternInput();
+	return *FourPinExternInput::f;
 }
 
 }
