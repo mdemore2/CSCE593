@@ -10,7 +10,7 @@ namespace HW3
 	class Window 
 	{
 	public:
-		virtual ~Window() = 0;
+		virtual ~Window() = default;
 		virtual void setName(const std::string& id);
 		//virtual int getWidth() const = 0;
 		//virtual int getHeight() const = 0;

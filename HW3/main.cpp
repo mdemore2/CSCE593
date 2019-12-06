@@ -8,6 +8,7 @@
 #include "WinGUIFactory.h"
 #include "LinGUIFactory.h"
 #include "FourPinExternInput.h"
+#include <memory>
 
 using namespace HW3;
 
@@ -26,6 +27,13 @@ int main(int argc, char* argv[])
 
 void testMainProgram()
 {
+	#ifdef osWINDOWS
+		f = new WinGUIFactory();
+	#elif defined osLINUX
+		f = new LinGUIFactory();
+	#endif
+
+	auto w = f->createWindow();
    //create the two windows - input and output. The top window is the "input" window. The bottom is the "output" window.
    //One button exists in each window for each external hardware pin we are monitoring. Create these buttons and associate
    //them with the corresponding hardware pins they are monitoring, respectively.

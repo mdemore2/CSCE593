@@ -9,10 +9,10 @@ namespace HW3
 		std::shared_ptr<WinGUIFactory> newFactory;
 		return newFactory;
 	}
-	std::shared_ptr<WinButton> createButton() {
+	std::shared_ptr<Button> WinGUIFactory::createButton() const {
 		return WinButton::New();
 	}
-	std::shared_ptr<WinWindow> createWindow() {
+	std::shared_ptr<Window> WinGUIFactory::createWindow() const {
 		return  WinWindow::New();
 	}
 }

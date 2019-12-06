@@ -11,7 +11,7 @@ namespace HW3
 	class Button
 	{
 	public:
-		virtual ~Button() = 0;
+		virtual ~Button() = default;
 		void setName(const std::string& id);
 		void setValue(const std::string& value);
 		void setState(const BUTTON_STATE& state);

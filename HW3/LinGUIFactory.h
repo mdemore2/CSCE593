@@ -7,6 +7,7 @@ namespace HW3
 {
 	class LinGUIFactory : public GUIFactory {
 	public:
+		~LinGUIFactory() = default;
 		static std::shared_ptr<LinGUIFactory> New();
 
 		virtual std::shared_ptr<LinButton> createButton() const = 0;

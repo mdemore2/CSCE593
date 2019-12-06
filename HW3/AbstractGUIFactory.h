@@ -1,6 +1,7 @@
 #pragma once
 #include "Button.h"
 #include "Window.h"
+#include <memory>
 //osWINDOWS and osLINUX implemented using inheritence, os determines makeup of gui (windows, buttons)
 
 #define osWINDOWS
@@ -8,14 +9,14 @@
 
 namespace HW3
 {
-	class GUIFactory
+	class AbstractGUIFactory
 	{
 	public:
-		virtual ~GUIFactory() = 0;
-		virtual std::shared_ptr<Window> createWindow() = 0;
-		virtual std::shared_ptr<Button> createButton() = 0;
+		virtual ~AbstractGUIFactory() = default;
+		virtual std::shared_ptr<Window> createWindow() const = 0;
+		virtual std::shared_ptr<Button> createButton() const = 0;
 
 	protected:
-		std::shared_ptr<GUIFactory> factory;
+		std::shared_ptr<AbstractGUIFactory> factory;
 	};
 }

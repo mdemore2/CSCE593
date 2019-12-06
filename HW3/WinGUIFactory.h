@@ -2,15 +2,17 @@
 #include "AbstractGUIFactory.h"
 #include "WinButton.h"
 #include "WinWindow.h"
+#include <memory>
 
 namespace HW3
 {
-	class WinGUIFactory : public GUIFactory {
+	class WinGUIFactory : public AbstractGUIFactory {
 	public:
+		~WinGUIFactory() = default;
 		static std::shared_ptr<WinGUIFactory> New();
 
-		virtual std::shared_ptr<WinButton> createButton() const = 0;
-		virtual std::shared_ptr<WinWindow> createWindow() const = 0;
+		std::shared_ptr<Button> createButton()  const override;
+		std::shared_ptr<Window> createWindow() const override;
 			
 	};
 
