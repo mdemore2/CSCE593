@@ -33,10 +33,11 @@ void testMainProgram()
 		f = new LinGUIFactory();
 	#endif
 
-	auto w1 = f->createWindow();
-	auto w2 = f->createWindow();
-	w1->setName("Inputs");
-	w2->setName("Outputs");
+	std::vector<std::shared_ptr<Button>> inbutts, outbutts;
+	auto wi = f->createWindow();
+	auto wo = f->createWindow();
+	wi->setName("Inputs");
+	wo->setName("Outputs");
 	for (int i = 0; i < 3; i++)
 	{
 		int three = 3;
@@ -50,6 +51,10 @@ void testMainProgram()
 		bo->setValue("o");
 		bi->setState(BUTTON_STATE::OFF);
 		bo->setValue("o");
+		wi->addButton(bi);
+		wo->addButton(bo);
+		inbutts.push_back(bi);
+		outbutts.push_back(bo);
 	}
    //create the two windows - input and output. The top window is the "input" window. The bottom is the "output" window.
    //One button exists in each window for each external hardware pin we are monitoring. Create these buttons and associate
@@ -61,6 +66,30 @@ void testMainProgram()
              << " This mask will be applied \n"
              << " to all 4 hardware input pins: ";
 
+   char m3, m2, m1, m0;
+   std::cin >> m3;
+   std::cin >> m2;
+   std::cin >> m1;
+   std::cin >> m0;
+
+   if (m3 == static_cast<char>(1))
+   {
+	   outbutts.at(0)->setState(BUTTON_STATE::ON);
+   }
+   if (m2 == static_cast<char>(1))
+   {
+	   outbutts.at(1)->setState(BUTTON_STATE::ON);
+   }
+   if (m1 == static_cast<char>(1))
+   {
+	   outbutts.at(2)->setState(BUTTON_STATE::ON);
+   }
+   if (m0 == static_cast<char>(1))
+   {
+	   outbutts.at(3)->setState(BUTTON_STATE::ON);
+   }
+   
+   
    //read 4 ints from standard in. First read input corresponds to Most Significant Bit of the mask.
    //Last read input corresponds to Least Significant Bit of the mask.
    //The input Window's buttons always have a state of "ON"
@@ -78,8 +107,8 @@ void testMainProgram()
    for( int i = 0; i < 17; i++ )
    {
       FourPinExternInput::receiveNewPinState();
-      //myInputWindow->draw( std::cout ); //update the input window w/ your instance
-      //myOutputWindow->draw( std::cout ); //update the output window w/ your instance
+      wi->draw( std::cout ); //update the input window w/ your instance
+      wo->draw( std::cout ); //update the output window w/ your instance
       std::cin.get();
    }
 }
