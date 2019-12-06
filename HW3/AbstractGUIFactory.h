@@ -2,10 +2,8 @@
 #include "Button.h"
 #include "Window.h"
 #include <memory>
-//osWINDOWS and osLINUX implemented using inheritence, os determines makeup of gui (windows, buttons)
-
-//#define osWINDOWS
-//#define osLINUX
+//osWINDOWS and osLINUX use inheritence, os determines makeup of gui (windows, buttons)
+//abstract factory pattern used, both guis composed of windows and buttons, but windows and buttons are different based on os
 
 namespace HW3
 {

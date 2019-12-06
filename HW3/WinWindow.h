@@ -19,7 +19,7 @@ namespace HW3
 
 	protected:
 
-		std::vector<std::shared_ptr<WinButton>> buttons;
+		std::vector<std::shared_ptr<Button>> buttons;
 
 
 

@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "WinButton.h"
+//factory pattern, uses abstract factory and makes concrete gui using concrete windows and buttons for specific os
 
 namespace HW3
 {

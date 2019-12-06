@@ -120,6 +120,7 @@ namespace HW3
 					linecount += factor;
 				}
 				while (linecount < width)
+
 				{
 					os << " ";
 					linecount++;

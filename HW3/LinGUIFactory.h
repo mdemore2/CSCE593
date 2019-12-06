@@ -12,8 +12,8 @@ namespace HW3
 		~LinGUIFactory() = default;
 		static std::shared_ptr<LinGUIFactory> New();
 
-		virtual std::shared_ptr<Button> createButton() const override = 0;
-		virtual std::shared_ptr<Window> createWindow() const override = 0;
+		std::shared_ptr<Button> createButton() const override;
+		std::shared_ptr<Window> createWindow() const override;
 
 		
 	};

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#define osWINDOWS
+//#define osWINDOWS
 //#define osLINUX
 
 #include "AbstractGUIFactory.h"
@@ -30,7 +30,7 @@ void testMainProgram()
 	#ifdef osWINDOWS
 		auto f = new WinGUIFactory();
 	#elif defined osLINUX
-		f = new LinGUIFactory();
+		auto f = new LinGUIFactory();
 	#endif
 
 	std::vector<std::shared_ptr<Button>> inbutts, outbutts;

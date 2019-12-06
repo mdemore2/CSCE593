@@ -3,7 +3,7 @@
 #include <vector>
 #include <functional>
 #include<memory>
-//pins implemented with Singleton pattern, ensures single instance of pins
+//implemented with Singleton pattern, ensures single instance of pins
 
 namespace HW3
 {
