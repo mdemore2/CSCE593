@@ -4,8 +4,8 @@
 #include <memory>
 //osWINDOWS and osLINUX implemented using inheritence, os determines makeup of gui (windows, buttons)
 
-#define osWINDOWS
-#define osLINUX
+//#define osWINDOWS
+//#define osLINUX
 
 namespace HW3
 {

@@ -3,27 +3,27 @@
 
 namespace HW3
 {
-	static std::shared_ptr<LinWindow> New()
+	std::shared_ptr<LinWindow> LinWindow::New()
 	{
-		std::shared_ptr<LinWindow> newWindow;
-		return std::move(newWindow);
+		auto newWindow = new LinWindow();
+		return std::shared_ptr<LinWindow>(newWindow);
 	}
-	void Window::setName(const std::string& id)
+	void LinWindow::setName(const std::string& id)
 	{
 		std::string newname = "Lindow: " + id;
 		this->name = id;
 	}
 
 
-	int LinWindow::addButton(std::shared_ptr<LinButton> button)
+	/*void Window::addButton(std::shared_ptr<Button> button)
 	{
 		this->buttons.push_back(button);
-	}
-	int LinWindow::draw(std::ostream& os) const
+	}*/
+	void LinWindow::draw(std::ostream& os) const
 	{
 		int height = 7;
 		int width = 0;
-		width = this->name.length() + 5;
+		width = static_cast<int>(this->name.length()) + 5;
 		int altwidth = 0;
 		for (int i = 0; i < buttons.size(); i++)
 		{
@@ -40,7 +40,7 @@ namespace HW3
 			if (height == 7)
 			{
 				os << "<=" << this->name;
-				linecount += this->name.length() + 2;
+				linecount += static_cast<int>(this->name.length()) + 2;
 				while (linecount < width)
 				{
 					os << "=";
@@ -135,7 +135,6 @@ namespace HW3
 			height--;
 			linecount = 0;
 		}
-
 
 	}
 

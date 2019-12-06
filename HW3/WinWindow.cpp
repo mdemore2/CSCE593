@@ -12,21 +12,24 @@ namespace HW3
 		return std::move(newWindow);
 	}
 
-	void Window::setName(const std::string& id)
+	void WinWindow::setName(const std::string& id)
 	{
 		std::string newname = "WinWindow: " + id;
 		this->name = newname;
 	}
-
-	int WinWindow::addButton(std::shared_ptr<WinButton> button) 
+	void Window::setName(const std::string& id)
+	{
+		this->name = id;
+	}
+	void Window::addButton(std::shared_ptr<Button> button) 
 	{
 		this->buttons.push_back(button);
 	}
-	int WinWindow::draw(std::ostream& os) const
+	void WinWindow::draw(std::ostream& os) const
 	{
 		int height = 7;
 		int width = 0;
-		width = this->name.length() + 5;
+		width = static_cast<int>(this->name.length()) + 5;
 		int altwidth = 0;
 		for (int i = 0; i < buttons.size(); i++)
 		{
@@ -43,7 +46,7 @@ namespace HW3
 			if (height == 7)
 			{
 				os << "+---" << this->name;
-				linecount += this->name.length() + 4;
+				linecount += static_cast<int>(this->name.length()) + 4;
 				while (linecount < width)
 				{
 					os << "-";
@@ -139,6 +142,5 @@ namespace HW3
 			height--;
 			linecount = 0;
 		}
-		
 	}
 }

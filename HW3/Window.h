@@ -15,8 +15,8 @@ namespace HW3
 		//virtual int getWidth() const = 0;
 		//virtual int getHeight() const = 0;
 
-		virtual int addButton(std::shared_ptr<Button> button) const = 0;
-		virtual int draw(std::ostream& os) const = 0;
+		void addButton(std::shared_ptr<Button> button);
+		virtual void draw(std::ostream& os) const = 0;
 		
 
 		/*

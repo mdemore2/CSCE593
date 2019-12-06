@@ -23,12 +23,12 @@ namespace HW3
 		int width = 0;
 		if (this->name.length() > this->value.length())
 		{
-			width = this->name.length();
+			width = static_cast<int>(this->name.length());
 			width += 4;
 		}
 		else
 		{
-			width = this->value.length();
+			width = static_cast<int>(this->value.length());
 			width += 2;
 		}
 
@@ -54,7 +54,7 @@ namespace HW3
 		return this->state;
 	}
 
-	int Button::drawTopEdge(std::ostream& os) const
+	/*int Button::drawTopEdge(std::ostream& os) const
 	{
 	}
 	int Button::drawState(std::ostream& os) const
@@ -65,7 +65,7 @@ namespace HW3
 	}
 	int Button::drawBottomEdge(std::ostream& os) const
 	{
-	}
+	}*/
 
 	void Button::listenForValueChange(std::function<void(const std::string & value)> observer)
 	{

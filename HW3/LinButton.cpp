@@ -5,10 +5,10 @@
 
 namespace HW3
 {
-	static std::shared_ptr<LinButton> New()
+	std::shared_ptr<LinButton> LinButton::New()
 	{
-		std::shared_ptr<LinButton> newButton;
-		return std::move(newButton);
+		auto newButton = new LinButton();
+		return std::shared_ptr<LinButton>(newButton);
 	}
 
 
@@ -20,7 +20,7 @@ namespace HW3
 		if (width > this->name.length() + 4)
 		{
 			width -= 4;
-			width -= this->name.length();
+			width -= static_cast<int>(this->name.length());
 		}
 		else
 		{
@@ -38,7 +38,7 @@ namespace HW3
 	int LinButton::drawState(std::ostream& os) const
 	{
 		int width = getWidth();
-		width -= getStateStr().length() + 2;
+		width -= static_cast<int>(getStateStr().length()) + 2;
 		os << "[";
 		while (width > 0)
 		{
@@ -52,7 +52,7 @@ namespace HW3
 	int LinButton::drawValue(std::ostream& os) const
 	{
 		int width = getWidth();
-		width -= this->value.length() + 2;
+		width -= static_cast<int>(this->value.length()) + 2;
 		os << "[";
 		while (width > 0)
 		{
@@ -77,4 +77,5 @@ namespace HW3
 		os << ">";
 		return getWidth();
 	}
+	
 }
