@@ -38,6 +38,7 @@ void testMainProgram()
 	auto wo = f->createWindow();
 	wi->setName("Inputs");
 	wo->setName("Outputs");
+
 	for (int i = 0; i < 3; i++)
 	{
 		int three = 3;
@@ -56,6 +57,12 @@ void testMainProgram()
 		inbutts.push_back(bi);
 		outbutts.push_back(bo);
 	}
+
+	auto inbuttlamb = [=](auto const& pins) { for (int i = 0; i < 3; i++) { inbutts(i)->setValue(pins(i)); } };
+	auto outbuttlamb = [=](auto const& pins) { for (int i = 0; i < 3; i++) { if (outbutts(i)->getState() == BUTTON_STATE::ON) { outbutts(i)->setVal(pins(i)); } };
+
+	FourPinExternInput::listenForPinChange(inbuttlamb);
+	FourPinExternInput::listenForPinChange(outbuttlamb);
    //create the two windows - input and output. The top window is the "input" window. The bottom is the "output" window.
    //One button exists in each window for each external hardware pin we are monitoring. Create these buttons and associate
    //them with the corresponding hardware pins they are monitoring, respectively.
