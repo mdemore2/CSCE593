@@ -16,6 +16,7 @@ namespace HW3
 
 	int WinButton::drawTopEdge(std::ostream& os) const
 	{
+		
 		int width = this->getWidth();
 		if (width > this->name.length() + 4)
 		{
@@ -27,7 +28,7 @@ namespace HW3
 			width = 0;
 		}
 		os << "+-" << this->name;
-		while (width < 0)
+		while (width > 0)
 		{
 			os << "-";
 			width--;

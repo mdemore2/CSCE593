@@ -29,7 +29,7 @@ namespace HW3
 			width = 0;
 		}
 		os << "<=" << this->name;
-		while (width < 0)
+		while (width > 0)
 		{
 			os << "=";
 			width--;

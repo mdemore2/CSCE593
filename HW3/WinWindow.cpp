@@ -34,7 +34,7 @@ namespace HW3
 		int altwidth = 0;
 		for (int i = 0; i < buttons.size(); i++)
 		{
-			std::shared_ptr<Button> button = buttons.at(i);
+			std::shared_ptr<Button> button = buttons[i];
 			altwidth += button->getWidth();
 		}
 		if (altwidth > width)
@@ -72,9 +72,9 @@ namespace HW3
 			{
 				os << "|";
 				linecount++;
-				for (int i = 0; i < buttons.size(); i++)
+				for (int i = 0; i < static_cast<int>(buttons.size()); i++)
 				{
-					int factor = buttons.at(i)->drawTopEdge(os);
+					int factor = buttons[i]->drawTopEdge(os);
 					linecount += factor;
 				}
 				while (linecount < width)
@@ -88,9 +88,9 @@ namespace HW3
 			{
 				os << "|";
 				linecount++;
-				for (int i = 0; i < buttons.size(); i++)
+				for (int i = 0; i < static_cast<int>(buttons.size()); i++)
 				{
-					int factor = buttons.at(i)->drawState(os);
+					int factor = buttons[i]->drawState(os);
 					linecount += factor;
 				}
 				while (linecount < width)
@@ -106,7 +106,7 @@ namespace HW3
 				linecount++;
 				for (int i = 0; i < buttons.size(); i++)
 				{
-					int factor = buttons.at(i)->drawValue(os);
+					int factor = buttons[i]->drawValue(os);
 					linecount += factor;
 				}
 				while (linecount < width)
@@ -122,7 +122,7 @@ namespace HW3
 				linecount++;
 				for (int i = 0; i < buttons.size(); i++)
 				{
-					int factor = buttons.at(i)->drawBottomEdge(os);
+					int factor = buttons[i]->drawBottomEdge(os);
 					linecount += factor;
 				}
 				while (linecount < width)

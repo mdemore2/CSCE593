@@ -63,11 +63,11 @@ void testMainProgram()
 		{
 			if (pins[i] == PIN_VAL::HIGH)
 			{
-				inbutts.at(i)->setValue("l");
+				inbutts[i]->setValue("l");
 			}
 			else
 			{
-				inbutts.at(i)->setValue("o");
+				inbutts[i]->setValue("o");
 
 			}
 		}
@@ -75,14 +75,14 @@ void testMainProgram()
 	auto outbuttlamb = [=](auto & pins) { 
 		for (int i = 0; i < 3; i++)
 		{
-			if (outbutts.at(i)->getState() == BUTTON_STATE::ON) {
+			if (outbutts[i]->getState() == BUTTON_STATE::ON) {
 				if (pins[i] == PIN_VAL::HIGH)
 				{
-					outbutts.at(i)->setValue("l");
+					outbutts[i]->setValue("l");
 				}
 				else
 				{
-					outbutts.at(i)->setValue("o");
+					outbutts[i]->setValue("o");
 				}
 			}
 		}
@@ -109,19 +109,19 @@ void testMainProgram()
 
    if (m3 == static_cast<char>(1))
    {
-	   outbutts.at(0)->setState(BUTTON_STATE::ON);
+	   outbutts[0]->setState(BUTTON_STATE::ON);
    }
    if (m2 == static_cast<char>(1))
    {
-	   outbutts.at(1)->setState(BUTTON_STATE::ON);
+	   outbutts[1]->setState(BUTTON_STATE::ON);
    }
    if (m1 == static_cast<char>(1))
    {
-	   outbutts.at(2)->setState(BUTTON_STATE::ON);
+	   outbutts[2]->setState(BUTTON_STATE::ON);
    }
    if (m0 == static_cast<char>(1))
    {
-	   outbutts.at(3)->setState(BUTTON_STATE::ON);
+	   outbutts[3]->setState(BUTTON_STATE::ON);
    }
    
    
