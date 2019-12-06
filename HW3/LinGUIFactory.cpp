@@ -13,10 +13,10 @@ namespace HW3
 		auto newFactory = new LinGUIFactory();
 		return std::shared_ptr<LinGUIFactory>(newFactory);
 	}
-	std::shared_ptr<Button> LinGUIFactory::createButton() {
+	std::shared_ptr<Button> LinGUIFactory::createButton() const{
 		return std::move(LinButton::New());
 	}
-	std::shared_ptr<Window> LinGUIFactory::createWindow() {
+	std::shared_ptr<Window> LinGUIFactory::createWindow() const {
 		return  std::move(LinWindow::New());
 	}
 }
