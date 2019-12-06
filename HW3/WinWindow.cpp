@@ -2,14 +2,15 @@
 #include "WinWindow.h"
 #include "Button.h"
 #include "WinButton.h"
+#include<memory>
 
 namespace HW3
 {
 
 	std::shared_ptr<WinWindow> WinWindow::New()
 	{
-		std::shared_ptr<WinWindow> newWindow;
-		return std::move(newWindow);
+		auto newWindow = new WinWindow();
+		return std::shared_ptr<WinWindow>(newWindow);
 	}
 
 	void WinWindow::setName(const std::string& id)

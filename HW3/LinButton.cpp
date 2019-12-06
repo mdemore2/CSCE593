@@ -2,6 +2,8 @@
 #include "LinButton.h"
 #include <iostream>
 #include <string>
+#include <memory>
+
 
 namespace HW3
 {

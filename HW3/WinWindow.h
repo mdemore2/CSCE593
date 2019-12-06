@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.h"
 #include "Button.h"
+#include <memory>
 #include "WinButton.h"
 
 namespace HW3

@@ -2,6 +2,8 @@
 #include "AbstractGUIFactory.h"
 #include "LinButton.h"
 #include "LinWindow.h"
+#include<memory>
+
 
 namespace HW3
 {

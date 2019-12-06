@@ -3,6 +3,8 @@
 #include <vector>
 #include <functional>
 #include <iostream>
+#include <memory>
+
 
 namespace HW3
 {

@@ -2,13 +2,15 @@
 #include "WinButton.h"
 #include <iostream>
 #include <string>
+#include <memory>
+
 
 namespace HW3
 {
 	std::shared_ptr<WinButton> WinButton::New()
 	{
-		std::shared_ptr<WinButton> newButton;
-		return std::move(newButton);
+		auto newButton = new WinButton();
+		return std::shared_ptr<WinButton>(newButton);
 	}
 
 

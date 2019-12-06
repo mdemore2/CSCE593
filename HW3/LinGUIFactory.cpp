@@ -1,5 +1,7 @@
 #include "AbstractGUIFactory.h"
 #include "LinGUIFactory.h"
+#include <memory>
+
 #include "LinButton.h"
 #include "LinWindow.h"
 
@@ -11,9 +13,9 @@ namespace HW3
 		return newFactory;
 	}
 	std::shared_ptr<LinButton> createButton() {
-		return LinButton::New();
+		return std::move(LinButton::New());
 	}
 	std::shared_ptr<LinWindow> createWindow() {
-		return  LinWindow::New();
+		return  std::move(LinWindow::New());
 	}
 }

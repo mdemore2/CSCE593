@@ -1,4 +1,5 @@
 #include "FourPinExternInput.h"
+#include <memory>
 
 #include <iostream>
 #include <array>

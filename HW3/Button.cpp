@@ -1,6 +1,8 @@
 #include "Button.h"
 #include <iostream>
 #include <array>
+#include <memory>
+
 #include <functional>
 #include <string>
 

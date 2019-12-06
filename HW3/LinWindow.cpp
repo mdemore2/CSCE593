@@ -1,4 +1,6 @@
 #include "Window.h"
+#include <memory>
+
 #include "LinWindow.h"
 
 namespace HW3
