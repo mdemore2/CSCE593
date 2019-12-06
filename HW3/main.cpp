@@ -65,14 +65,25 @@ void testMainProgram()
 			{
 				inbutts.at(i)->setValue("l");
 			}
-			
+			else
+			{
+				inbutts.at(i)->setValue("o");
+
+			}
 		}
 		});
 	auto outbuttlamb = [=](auto & pins) { 
 		for (int i = 0; i < 3; i++)
 		{
 			if (outbutts.at(i)->getState() == BUTTON_STATE::ON) {
-				outbutts.at(i)->setValue(pins[i]);
+				if (pins[i] == PIN_VAL::HIGH)
+				{
+					outbutts.at(i)->setValue("l");
+				}
+				else
+				{
+					outbutts.at(i)->setValue("o");
+				}
 			}
 		}
 	};

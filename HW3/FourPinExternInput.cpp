@@ -62,7 +62,7 @@ void FourPinExternInput::receiveNewPinState()
    for (int i = 0; i < instance().subscribers.size(); i++)
    {
 	   auto lamb = instance().subscribers.at(i);
-	   lamb(PINS);
+	   lamb(instance().pins);
 	   //run lambda
    }
 

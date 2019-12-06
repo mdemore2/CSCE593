@@ -45,5 +45,6 @@ private:
 
 	std::array<PIN_VAL, 4> pins;
 	std::vector<subscriberCallback> subscribers;
+	//std::vector<std::array<PIN_VAL, 4>> subscribers;
 };
 }
