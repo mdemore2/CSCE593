@@ -8,7 +8,7 @@ namespace HW3
 	static std::shared_ptr<LinButton> New()
 	{
 		std::shared_ptr<LinButton> newButton;
-		return newButton;
+		return std::move(newButton);
 	}
 
 

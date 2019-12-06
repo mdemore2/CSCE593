@@ -13,7 +13,7 @@ namespace HW3
 
 
 
-		virtual int addButton(std::shared_ptr<LinButton> button) const = 0;
+		virtual int addButton(std::shared_ptr<LinButton> button)  = 0;
 		virtual int draw(std::ostream& os) const override = 0;
 
 	protected:

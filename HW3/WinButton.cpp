@@ -5,10 +5,10 @@
 
 namespace HW3
 {
-	static std::shared_ptr<WinButton> New()
+	std::shared_ptr<WinButton> WinButton::New()
 	{
 		std::shared_ptr<WinButton> newButton;
-		return newButton;
+		return std::move(newButton);
 	}
 
 

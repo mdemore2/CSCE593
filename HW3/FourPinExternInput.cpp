@@ -58,7 +58,7 @@ void FourPinExternInput::receiveNewPinState()
 
    for (int i = 0; i < FourPinExternInput::SUBSCRIBERS.size(); i++)
    {
-	   FourPinExternInput::SUBSCRIBERS.front();
+	   FourPinExternInput::SUBSCRIBERS.at(i);
 	   //run lambda
    }
 

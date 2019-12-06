@@ -7,6 +7,7 @@ namespace HW3
 {
 	class LinButton : public Button
 	{
+	public:
 		static std::shared_ptr< LinButton > New();
 
 		//int getWidth() const override = 0;
