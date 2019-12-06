@@ -75,6 +75,7 @@ namespace HW3
 				while (linecount < width)
 				{
 					os << " ";
+					linecount++;
 				}
 				os << "]";
 			}
@@ -89,6 +90,7 @@ namespace HW3
 				while (linecount < width)
 				{
 					os << " ";
+					linecount++;
 				}
 				os << "]";
 			}
@@ -104,6 +106,7 @@ namespace HW3
 				while (linecount < width)
 				{
 					os << " ";
+					linecount++;
 				}
 				os << "]";
 			}
@@ -119,6 +122,7 @@ namespace HW3
 				while (linecount < width)
 				{
 					os << " ";
+					linecount++;
 				}
 				os << "]";
 			}
@@ -133,7 +137,7 @@ namespace HW3
 				}
 				os << ">";
 			}
-
+			os << "/n";
 			height--;
 			linecount = 0;
 		}
