@@ -14,7 +14,8 @@ namespace HW3
 
 	void Window::setName(const std::string& id)
 	{
-		this->name = id;
+		std::string newname = "WinWindow: " + id;
+		this->name = newname;
 	}
 
 	int WinWindow::addButton(std::shared_ptr<WinButton> button) 

@@ -28,12 +28,29 @@ int main(int argc, char* argv[])
 void testMainProgram()
 {
 	#ifdef osWINDOWS
-		f = new WinGUIFactory();
+		auto f = new WinGUIFactory();
 	#elif defined osLINUX
 		f = new LinGUIFactory();
 	#endif
 
-	auto w = f->createWindow();
+	auto w1 = f->createWindow();
+	auto w2 = f->createWindow();
+	w1->setName("Inputs");
+	w2->setName("Outputs");
+	for (int i = 0; i < 3; i++)
+	{
+		int three = 3;
+		auto bi = f->createButton();
+		auto bo = f->createButton();
+		std::string inname = "In  " + std::to_string(three-i);
+		std::string outname = "Out " + std::to_string(three-i);
+		bi->setName(inname);
+		bo->setName(outname);
+		bi->setState(BUTTON_STATE::ON);
+		bo->setValue("o");
+		bi->setState(BUTTON_STATE::OFF);
+		bo->setValue("o");
+	}
    //create the two windows - input and output. The top window is the "input" window. The bottom is the "output" window.
    //One button exists in each window for each external hardware pin we are monitoring. Create these buttons and associate
    //them with the corresponding hardware pins they are monitoring, respectively.

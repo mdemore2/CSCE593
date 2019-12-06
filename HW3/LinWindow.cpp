@@ -10,6 +10,7 @@ namespace HW3
 	}
 	void Window::setName(const std::string& id)
 	{
+		std::string newname = "Lindow: " + id;
 		this->name = id;
 	}
 
