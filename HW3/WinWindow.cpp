@@ -12,12 +12,18 @@ namespace HW3
 		return newWindow;
 	}
 
+	void Window::setName(const std::string& id)
+	{
+		this->name = id;
+	}
+
 	int WinWindow::addButton(std::shared_ptr<WinButton> button) const
 	{
 		this->buttons.push_back(button);
 	}
 	int WinWindow::draw(std::ostream& os) const
 	{
-
+		//if window name bigger than width of all buttons, no extra char before corner
+		//else fill to fit one beyond width of all buttons
 	}
 }

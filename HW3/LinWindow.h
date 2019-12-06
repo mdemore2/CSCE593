@@ -11,6 +11,8 @@ namespace HW3
 
 		static std::shared_ptr< LinWindow > New();
 
+
+
 		virtual int addButton(std::shared_ptr<LinButton> button) const = 0;
 		virtual int draw(std::ostream& os) const override = 0;
 

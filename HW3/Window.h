@@ -11,7 +11,7 @@ namespace HW3
 	{
 	public:
 		virtual ~Window() = 0;
-		void setName(const std::string& id);
+		virtual void setName(const std::string& id);
 		//virtual int getWidth() const = 0;
 		//virtual int getHeight() const = 0;
 

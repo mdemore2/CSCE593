@@ -12,8 +12,8 @@ namespace HW3
 	{
 	public:
 		virtual ~GUIFactory() = 0;
-		virtual Window *createWindow() = 0;
-		virtual Button *createButton() = 0;
+		virtual std::shared_ptr<Window> createWindow() = 0;
+		virtual std::shared_ptr<Button> createButton() = 0;
 
 	protected:
 		std::shared_ptr<GUIFactory> factory;

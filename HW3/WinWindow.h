@@ -9,7 +9,9 @@ namespace HW3
 	{
 	public:
 		static std::shared_ptr< WinWindow > New();
-		
+
+
+
 		virtual int addButton(std::shared_ptr<WinButton> button) const = 0;
 		virtual int draw(std::ostream& os) const override = 0;
 

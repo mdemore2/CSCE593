@@ -8,10 +8,15 @@ namespace HW3
 		std::shared_ptr<LinWindow> newWindow;
 		return newWindow;
 	}
+	void Window::setName(const std::string& id)
+	{
+		this->name = id;
+	}
+
 
 	int LinWindow::addButton(std::shared_ptr<LinButton> button) const
 	{
-		this->buttons.push_back(button);
+		this->buttons.emplace_back(std::move(button));
 	}
 	int LinWindow::draw(std::ostream& os) const
 	{

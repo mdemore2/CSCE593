@@ -9,11 +9,9 @@ namespace HW3
 	public:
 		static std::shared_ptr<LinGUIFactory> New();
 
-		Button* createButton() {
-			return new LinButton;
-		}
-		Window* createWindow() {
-			return new LinWindow;
-		}
+		virtual std::shared_ptr<LinButton> createButton() const = 0;
+		virtual std::shared_ptr<LinWindow> createWindow() const = 0;
+
+		
 	};
 }
