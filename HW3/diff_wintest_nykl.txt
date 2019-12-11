@@ -1,0 +1,27 @@
+							      >	test...								
+							      >	WinGUIFactory::WinGUIFactory()...								
+							      >	WinWindow::onCreate()...								
+							      >	WinButton::onCreate()...								
+							      >	+---WinWindow: This is a big, long name+								
+							      >	|                                      |								
+							      >	|+-My Big Button name------------+     |								
+							      >	||OFF                            |     |								
+							      >	||This is my value as a button...|     |								
+							      >	|+-------------------------------+     |								
+							      >	+--------------------------------------+								
+							      >	WinButton::onCreate()...								
+							      >	WinButton::onCreate()...								
+							      >	+---WinWindow: This is a big, long name----------------------								
+							      >	|                                                            								
+							      >	|+-My Big Button name------------++-Small-++-My other button'								
+							      >	||OFF                            ||ON     ||ON               								
+							      >	||This is my value as a button...||Short  ||Here is another v								
+							      >	|+-------------------------------++-------++-----------------								
+							      >	+------------------------------------------------------------								
+							      >	+---WinWindow: This is a very long title, it should be longer								
+							      >	|                                                            								
+							      >	|+-My Big Button name------------++-Small-++-My other button'								
+							      >	||OFF                            ||ON     ||ON               								
+							      >	||This is my value as a button...||Short  ||Here is another v								
+							      >	|+-------------------------------++-------++-----------------								
+							      >	+------------------------------------------------------------								

@@ -1,0 +1,27 @@
+							      >	test...								
+							      >	LinGUIFactory::LinGUIFactory()...								
+							      >	LinWindow::onCreate()...								
+							      >	LinButton::onCreate()...								
+							      >	<=Lindow: This is a big, long name>								
+							      >	[                                 ]								
+							      >	[<=My Big Button name============>]								
+							      >	[[                            OFF]]								
+							      >	[[This is my value as a button...]]								
+							      >	[<===============================>]								
+							      >	<=================================>								
+							      >	LinButton::onCreate()...								
+							      >	LinButton::onCreate()...								
+							      >	<=Lindow: This is a big, long name===========================								
+							      >	[                                                            								
+							      >	[<=My Big Button name============><=Small=><=My other button'								
+							      >	[[                            OFF][     ON][                 								
+							      >	[[This is my value as a button...][  Short][   Here is anothe								
+							      >	[<===============================><=======><=================								
+							      >	<============================================================								
+							      >	<=Lindow: This is a very long title, it should be longer than								
+							      >	[                                                            								
+							      >	[<=My Big Button name============><=Small=><=My other button'								
+							      >	[[                            OFF][     ON][                 								
+							      >	[[This is my value as a button...][  Short][   Here is anothe								
+							      >	[<===============================><=======><=================								
+							      >	<============================================================								
