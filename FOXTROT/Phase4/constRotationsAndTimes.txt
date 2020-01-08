@@ -1,0 +1,216 @@
+ScanRange: 200 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 200 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 200 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 200 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 300 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 300 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 300 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 300 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 400 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 400 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 400 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 400 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 500 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 500 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 500 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 500 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 600 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 600 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 600 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 600 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 700 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 700 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 700 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 700 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 800 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 800 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 800 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 800 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 900 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 900 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 900 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 900 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 1000 FOV Wedge: 20 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 1000 FOV Wedge: 40 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 1000 FOV Wedge: 60 Num Missiles: 1.000000
+Missiles Killed: 0
+ScanRange: 1000 FOV Wedge: 80 Num Missiles: 1.000000
+Missiles Killed: 1
+ScanRange: 200 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 200 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 200 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 200 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 300 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 300 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 300 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 300 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 400 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 400 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 400 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 400 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 500 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 500 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 500 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 500 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 600 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 600 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 600 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 600 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 700 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 700 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 700 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 700 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 800 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 800 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 0
+ScanRange: 800 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 800 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 900 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 900 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 0
+ScanRange: 900 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 2
+ScanRange: 900 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 0
+ScanRange: 1000 FOV Wedge: 20 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 1000 FOV Wedge: 40 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 1000 FOV Wedge: 60 Num Missiles: 2.000000
+Missiles Killed: 1
+ScanRange: 1000 FOV Wedge: 80 Num Missiles: 2.000000
+Missiles Killed: 0
+ScanRange: 200 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 200 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 200 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 200 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 300 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 300 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 300 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 300 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 400 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 400 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 400 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 400 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 500 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 500 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 500 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 500 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 600 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 600 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 600 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 600 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 700 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 700 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 700 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 700 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 800 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 0
+ScanRange: 800 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 800 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 1
+ScanRange: 800 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 900 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 900 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 900 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 900 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 3
+ScanRange: 1000 FOV Wedge: 20 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 1000 FOV Wedge: 40 Num Missiles: 3.000000
+Missiles Killed: 1
+ScanRange: 1000 FOV Wedge: 60 Num Missiles: 3.000000
+Missiles Killed: 2
+ScanRange: 1000 FOV Wedge: 80 Num Missiles: 3.000000
+Missiles Killed: 2

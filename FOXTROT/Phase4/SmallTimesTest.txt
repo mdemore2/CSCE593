@@ -1,0 +1,32 @@
+Num Missiles: 1 Time: 1
+Missiles Killed: 0
+Num Missiles: 1 Time: 2
+Missiles Killed: 1
+Num Missiles: 1 Time: 3
+Missiles Killed: 1
+Num Missiles: 1 Time: 4
+Missiles Killed: 1
+Num Missiles: 2 Time: 1
+Missiles Killed: 2
+Num Missiles: 2 Time: 2
+Missiles Killed: 2
+Num Missiles: 2 Time: 3
+Missiles Killed: 2
+Num Missiles: 2 Time: 4
+Missiles Killed: 2
+Num Missiles: 3 Time: 1
+Missiles Killed: 3
+Num Missiles: 3 Time: 2
+Missiles Killed: 3
+Num Missiles: 3 Time: 3
+Missiles Killed: 3
+Num Missiles: 3 Time: 4
+Missiles Killed: 3
+Num Missiles: 4 Time: 1
+Missiles Killed: 3
+Num Missiles: 4 Time: 2
+Missiles Killed: 4
+Num Missiles: 4 Time: 3
+Missiles Killed: 3
+Num Missiles: 4 Time: 4
+Missiles Killed: 4

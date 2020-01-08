@@ -1,0 +1,119 @@
+Quantity Inboud: 1 Time to Arrival: 4 Rotations: 1.000000
+Missiles Killed: 0
+
+Quantity Inboud: 1 Time to Arrival: 6 Rotations: 1.000000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 8 Rotations: 1.000000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 10 Rotations: 1.000000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 12 Rotations: 1.000000
+Missiles Killed: 1
+
+Quantity Inboud: 2 Time to Arrival: 4 Rotations: 1.000000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 6 Rotations: 1.000000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 8 Rotations: 1.000000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 10 Rotations: 1.000000
+Missiles Killed: 1
+
+Quantity Inboud: 2 Time to Arrival: 12 Rotations: 1.000000
+Missiles Killed: 1
+
+Quantity Inboud: 3 Time to Arrival: 4 Rotations: 1.000000
+Missiles Killed: 3
+
+Quantity Inboud: 3 Time to Arrival: 6 Rotations: 1.000000
+Missiles Killed: 3
+
+Quantity Inboud: 3 Time to Arrival: 8 Rotations: 1.000000
+Missiles Killed: 2
+
+Quantity Inboud: 3 Time to Arrival: 10 Rotations: 1.000000
+Missiles Killed: 2
+
+Quantity Inboud: 3 Time to Arrival: 12 Rotations: 1.000000
+Missiles Killed: 2
+
+Quantity Inboud: 4 Time to Arrival: 4 Rotations: 1.000000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 6 Rotations: 1.000000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 8 Rotations: 1.000000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 10 Rotations: 1.000000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 12 Rotations: 1.000000
+Missiles Killed: 3
+
+Quantity Inboud: 1 Time to Arrival: 4 Rotations: 1.500000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 6 Rotations: 1.500000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 8 Rotations: 1.500000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 10 Rotations: 1.500000
+Missiles Killed: 1
+
+Quantity Inboud: 1 Time to Arrival: 12 Rotations: 1.500000
+Missiles Killed: 1
+
+Quantity Inboud: 2 Time to Arrival: 4 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 6 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 8 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 10 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 2 Time to Arrival: 12 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 3 Time to Arrival: 4 Rotations: 1.500000
+Missiles Killed: 3
+
+Quantity Inboud: 3 Time to Arrival: 6 Rotations: 1.500000
+Missiles Killed: 3
+
+Quantity Inboud: 3 Time to Arrival: 8 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 3 Time to Arrival: 10 Rotations: 1.500000
+Missiles Killed: 1
+
+Quantity Inboud: 3 Time to Arrival: 12 Rotations: 1.500000
+Missiles Killed: 2
+
+Quantity Inboud: 4 Time to Arrival: 4 Rotations: 1.500000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 6 Rotations: 1.500000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 8 Rotations: 1.500000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 10 Rotations: 1.500000
+Missiles Killed: 4
+
+Quantity Inboud: 4 Time to Arrival: 12 Rotations: 1.500000
+Missiles Killed: 3
