@@ -1,6 +1,4 @@
 CSCE 593 - Intro to Software Engineering.
-Dr. Scott Nykl
-
 
 This course is concerned with the development of large-scale software systems (i.e., systems
 which have a large software component). Techniques in software requirements elicitation,
